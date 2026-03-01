@@ -68,7 +68,7 @@ export default function Navbar() {
             GitHub
           </a>
           <a
-            href="https://linkedin.com/in/mithileshan"
+            href="https://linkedin.com/in/mithileshan-muralidharan"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium px-4 py-1.5 rounded-full border border-white/20 hover:border-accent/60 hover:text-accent transition-colors"
@@ -105,7 +105,7 @@ export default function Navbar() {
           <a href="https://github.com/Mithileshan" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
             GitHub
           </a>
-          <a href="https://linkedin.com/in/mithileshan" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
+          <a href="https://linkedin.com/in/mithileshan-muralidharan" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-white/70 hover:text-white transition-colors">
             LinkedIn
           </a>
         </div>

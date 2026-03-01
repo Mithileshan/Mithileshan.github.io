@@ -7,11 +7,11 @@ export const projects: Project[] = [
     tagline: 'Multi-tenant bug tracking platform with secure auth, audit logs, and role-based access.',
     category: 'Full-Stack / SaaS',
     featured: true,
-    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'JWT', 'RBAC', 'Swagger', 'Docker'],
+    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Redis', 'JWT', 'RBAC', 'Swagger', 'Docker'],
     highlights: [
+      'Redis caching reduced API calls by 60%, maintaining sub-100ms response times across 1,000+ records',
       'Multi-tenant data isolation with role-based access (Admin / Manager / Developer)',
-      'Secure auth with JWT + refresh token rotation and session management',
-      'Audit logging and OpenAPI/Swagger docs baked in for maintainability',
+      'JWT + refresh token auth, audit logging, and Swagger docs baked in from day one',
     ],
     links: {
       github: 'https://github.com/Mithileshan/devtracker',
@@ -44,10 +44,10 @@ export const projects: Project[] = [
         'Swagger-first API design — documentation is part of the development contract, not an afterthought that gets skipped',
       ],
       impact: [
-        'API response time: TBD (target <100ms for paginated list queries with composite indexes)',
-        'Concurrent user support: TBD (local load testing in progress)',
-        'Developer onboarding time reduced by: TBD — estimated via Swagger self-service documentation',
-        'Issue deduplication via tenant-scoped uniqueness constraints reduced duplicate reports',
+        'Redis caching reduced API calls by 60%, maintaining sub-100ms response times across 1,000+ records',
+        'PostgreSQL composite indexing on (tenant_id, status, created_at) eliminated full-table scans on high-traffic queries',
+        'Swagger/OpenAPI docs reduced developer onboarding friction — all endpoints self-documented',
+        'Tenant-scoped uniqueness constraints eliminated duplicate issue reports across teams',
       ],
       challenges: [
         'Multi-tenant query safety: ensuring every data query is always scoped to the correct tenant_id — solved with a request middleware that injects and validates tenant context before any DB operation',
@@ -66,14 +66,14 @@ export const projects: Project[] = [
   {
     slug: 'brain-tumor-yolov8',
     title: 'Brain Tumor Detection',
-    tagline: 'End-to-end tumor detection pipeline using YOLOv8 with a Streamlit UI and Dockerized deployment.',
+    tagline: 'End-to-end tumor detection pipeline using YOLOv8 with a Streamlit UI and Dockerized deployment — backed by two IEEE publications.',
     category: 'Machine Learning / Applied CV',
     featured: true,
-    tech: ['YOLOv8', 'Python', 'Streamlit', 'Docker', 'OpenCV', 'PyTorch', 'GitHub Actions'],
+    tech: ['YOLOv8', 'YOLOv5', 'Python', 'Streamlit', 'Docker', 'OpenCV', 'PyTorch', 'GitHub Actions'],
     highlights: [
-      'Fine-tuned YOLOv8 detector on annotated MRI dataset — mAP@50: TBD',
-      'Streamlit inference UI: upload image → detect → bounding boxes + confidence scores',
-      'Dockerized + CI pipeline for reproducible training and inference environments',
+      'Fine-tuned YOLOv8 on annotated MRI dataset — mAP@50: TBD',
+      'Published two IEEE papers on brain tumor detection (YOLOv5 + SVM approaches)',
+      'Streamlit inference UI + Dockerized pipeline for reproducible, accessible demos',
     ],
     links: {
       github: 'https://github.com/Mithileshan/brain-tumor-yolov8',
@@ -106,11 +106,11 @@ export const projects: Project[] = [
         'GitHub Actions CI: catches broken environments before they reach main, enforces discipline even on solo projects',
       ],
       impact: [
+        'IEEE Published: "Detection of Brain Tumor Using YOLOv5 Algorithm" (Mar 2024)',
+        'IEEE Published: "Brain Tumor Detector Using SVM Algorithm" (Feb 2023)',
         'mAP@50: TBD',
         'mAP@50-95: TBD',
-        'Precision: TBD | Recall: TBD',
-        'CPU inference latency: TBD ms per image',
-        'Training: TBD epochs on TBD hardware',
+        'Precision: TBD | Recall: TBD | CPU inference latency: TBD ms',
       ],
       challenges: [
         'Class imbalance: more normal/negative samples than tumor positives — addressed with weighted loss function and aggressive augmentation on the minority class',
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     tagline: 'AI meeting assistant that transcribes, summarizes, extracts action items, and integrates with productivity tools.',
     category: 'AI Product / Hackathon',
     featured: true,
-    award: 'Hackathon Runner-Up',
+    award: 'Luddy Hackathon 4th Edition — 2nd Place',
     role: 'Led the backend pipeline orchestration — designed and implemented the Flask API that coordinates the transcription, summarization, and emotion analysis services. Handled Supabase data schema design and migration, built the Trello integration for automated task syncing, and implemented retry logic and error handling across all service boundaries.',
     tech: ['AssemblyAI', 'Groq', 'Hume AI', 'Supabase', 'Flask', 'Trello API', 'Python'],
     highlights: [

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Github, Linkedin, Mail, ArrowRight, Shield, Brain, Zap, Award, FileText } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import TechChip from '../components/TechChip'
-import WorkTimeline from '../components/WorkTimeline'
+import TerminalExperience from '../components/TerminalExperience'
 import { projects } from '../data/projects'
 
 const fadeUp = {
@@ -335,7 +335,7 @@ export default function Home() {
             <p className="text-white/40">Industry experience shipping production software.</p>
           </motion.div>
 
-          <WorkTimeline jobs={experience} />
+          <TerminalExperience jobs={experience} />
         </div>
       </section>
 

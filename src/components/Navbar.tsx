@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import Logo from './Logo'
 
 const navLinks = [
   { label: 'Home', to: '/' },
@@ -31,9 +32,13 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link
           to="/"
-          className="font-bold text-lg tracking-tight text-white hover:text-accent transition-colors"
+          className="flex items-center gap-2.5 group"
+          aria-label="Home"
         >
-          Mithileshan
+          <Logo size={30} className="transition-opacity group-hover:opacity-80" />
+          <span className="font-bold text-base tracking-tight text-white group-hover:text-accent transition-colors hidden sm:block">
+            Mithileshan
+          </span>
         </Link>
 
         {/* Desktop */}

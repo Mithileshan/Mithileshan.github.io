@@ -135,14 +135,23 @@ export default function Home() {
 
             <motion.h1
               variants={fadeUp}
-              className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white leading-tight"
+              className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.05]"
             >
-              Mithileshan
+              <span
+                style={{
+                  background: 'linear-gradient(135deg, #ffffff 0%, #ffffff 45%, #06b6d4 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  backgroundClip: 'text',
+                }}
+              >
+                Mithileshan
+              </span>
               <br />
-              <span className="text-white/30">Muralidharan</span>
+              <span className="text-white/25 font-bold tracking-tight">Muralidharan</span>
             </motion.h1>
 
-            <motion.p variants={fadeUp} className="text-xl text-white/50 font-medium">
+            <motion.p variants={fadeUp} className="text-xl text-white/50 font-medium tracking-wide">
               Software Engineer · Full-Stack · ML · Data Systems
             </motion.p>
 

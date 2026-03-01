@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Github, Linkedin, Mail, ArrowRight, Shield, Brain, Zap, Award, FileText } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import TechChip from '../components/TechChip'
+import WorkTimeline from '../components/WorkTimeline'
 import { projects } from '../data/projects'
 
 const fadeUp = {
@@ -334,41 +335,7 @@ export default function Home() {
             <p className="text-white/40">Industry experience shipping production software.</p>
           </motion.div>
 
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-50px' }}
-            className="flex flex-col gap-6"
-          >
-            {experience.map(job => (
-              <motion.div
-                key={`${job.role}-${job.period}`}
-                variants={fadeUp}
-                className="bg-surface border border-white/8 rounded-2xl p-6"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-2 mb-4">
-                  <div>
-                    <h3 className="font-bold text-white text-lg">{job.role}</h3>
-                    <p className="text-accent/80 font-medium text-sm">
-                      {job.company} · {job.location}
-                    </p>
-                  </div>
-                  <span className="text-xs font-medium text-white/35 bg-white/5 px-3 py-1.5 rounded-full whitespace-nowrap shrink-0">
-                    {job.period}
-                  </span>
-                </div>
-                <ul className="flex flex-col gap-2">
-                  {job.bullets.map((b, i) => (
-                    <li key={i} className="flex items-start gap-2.5 text-sm text-white/55 leading-relaxed">
-                      <span className="text-accent mt-0.5 shrink-0 font-bold">›</span>
-                      {b}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
-          </motion.div>
+          <WorkTimeline jobs={experience} />
         </div>
       </section>
 

@@ -15,6 +15,20 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.1 } },
 }
 
+// Name reveal — slides up from behind overflow:hidden clip, replays on scroll
+const nameContainer = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.14 } },
+}
+
+const nameSlide = {
+  hidden: { y: '115%' },
+  visible: {
+    y: '0%',
+    transition: { duration: 1.1, ease: [0.22, 1, 0.36, 1] },
+  },
+}
+
 const proofPoints = [
   {
     icon: Shield,
@@ -133,23 +147,47 @@ export default function Home() {
               MS CS @ Indiana University Bloomington
             </motion.div>
 
-            <motion.h1
-              variants={fadeUp}
-              className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.05]"
+            {/* Name — clip reveal, replays each time it enters viewport */}
+            <motion.div
+              variants={nameContainer}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: false, amount: 0.6 }}
             >
-              <span
-                style={{
-                  background: 'linear-gradient(135deg, #ffffff 0%, #ffffff 45%, #06b6d4 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}
-              >
-                Mithileshan
-              </span>
-              <br />
-              <span className="text-white/25 font-bold tracking-tight">Muralidharan</span>
-            </motion.h1>
+              <h1 className="text-5xl sm:text-7xl font-extrabold tracking-tight leading-[1.08]">
+                {/* Mithileshan — white → cyan gradient */}
+                <span className="block" style={{ overflow: 'hidden' }}>
+                  <motion.span
+                    variants={nameSlide}
+                    className="block"
+                    style={{
+                      background: 'linear-gradient(135deg, #ffffff 0%, #e2e8f0 45%, #06b6d4 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    Mithileshan
+                  </motion.span>
+                </span>
+
+                {/* Muralidharan — same gradient treatment, lower opacity */}
+                <span className="block" style={{ overflow: 'hidden' }}>
+                  <motion.span
+                    variants={nameSlide}
+                    className="block"
+                    style={{
+                      background: 'linear-gradient(135deg, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.22) 60%, rgba(6,182,212,0.3) 100%)',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent',
+                      backgroundClip: 'text',
+                    }}
+                  >
+                    Muralidharan
+                  </motion.span>
+                </span>
+              </h1>
+            </motion.div>
 
             <motion.p variants={fadeUp} className="text-xl text-white/50 font-medium tracking-wide">
               Software Engineer · Full-Stack · ML · Data Systems

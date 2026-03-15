@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Github, Linkedin, Mail, ArrowRight, Shield, Brain, Zap, Award, FileText } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import TechChip from '../components/TechChip'
-import TerminalExperience from '../components/TerminalExperience'
+import WorkTimeline from '../components/WorkTimeline'
 import { projects } from '../data/projects'
 
 const fadeUp = {
@@ -66,10 +66,11 @@ const experience = [
     location: 'Chennai, India',
     period: 'Jan 2024 – Aug 2024',
     bullets: [
-      'Architected and deployed two Spring Boot microservices, reducing deployment time by 30% via Docker and Kubernetes with inter-service communication using REST APIs and async event-driven patterns.',
-      'Implemented OAuth 2.0 and JWT-based authentication with RBAC, reducing unauthorized access attempts by 40%.',
+      'Architected and deployed two Spring Boot microservices, reducing deployment time by 30% and enabling independent scaling via Docker and Kubernetes. Designed inter-service communication using REST APIs and asynchronous event-driven patterns to improve system resiliency.',
+      'Implemented OAuth 2.0 and JWT-based authentication with role-based access control, reducing unauthorized access attempts by 40%.',
       'Optimized PostgreSQL queries through indexing and query restructuring, reducing high-traffic endpoint response times by 30%.',
-      'Achieved 95% test coverage across distributed services using JUnit, Mockito, and Log4j in a 6-member Agile team.',
+      'Engineered Python Flask APIs for I/O-intensive operations, increasing system throughput by 25%.',
+      'Established testing and monitoring practices using JUnit, Mockito, and Log4j, achieving 95% test coverage across distributed services. Collaborated within a 6-member backend team in an Agile environment.',
     ],
   },
   {
@@ -78,9 +79,11 @@ const experience = [
     location: 'Chennai, India',
     period: 'Jun 2023 – Jan 2024',
     bullets: [
-      'Built backend services with Spring Boot (MVC) and REST APIs with structured validation and error handling.',
-      'Designed normalized PostgreSQL schemas and indexing strategies to maintain performance at scale.',
-      'Diagnosed and resolved 30+ production issues using structured logging; increased test coverage from 60% to 90%.',
+      'Developed backend services using Spring Boot (MVC), building REST APIs with structured validation and error handling.',
+      'Designed normalized PostgreSQL schemas and indexing strategies to maintain performance as data volumes scaled.',
+      'Diagnosed and resolved 30+ production issues using structured logging and debugging practices.',
+      'Increased test coverage from 60% to 90% by writing comprehensive JUnit test cases.',
+      'Refactored legacy modules following clean code principles and design patterns to improve maintainability and reduce technical debt.',
     ],
   },
   {
@@ -89,9 +92,11 @@ const experience = [
     location: 'Chennai, India',
     period: 'Mar 2023 – May 2023',
     bullets: [
-      'Engineered automated Python data pipelines processing 50K+ records daily, reducing manual effort by 75%.',
-      'Built React dashboards integrated with Node.js APIs providing real-time KPI visibility, accelerating decisions by 40%.',
-      'Implemented CI/CD pipelines with GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes.',
+      'Engineered automated Python data pipelines processing 50K+ records daily, reducing manual effort by 75% and improving accuracy by 25%.',
+      'Built React dashboards integrated with Node.js APIs to provide real-time KPI visibility, accelerating decision-making by 40%.',
+      'Implemented CI/CD pipelines using GitHub Actions and Docker, reducing deployment time from 2 hours to 15 minutes.',
+      'Developed data validation and transformation logic to ensure quality and consistency across multiple client datasets.',
+      'Collaborated with cross-functional teams to deliver analytics solutions aligned with business objectives.',
     ],
   },
 ]
@@ -335,7 +340,7 @@ export default function Home() {
             <p className="text-white/40">Industry experience shipping production software.</p>
           </motion.div>
 
-          <TerminalExperience jobs={experience} />
+          <WorkTimeline jobs={experience} />
         </div>
       </section>
 

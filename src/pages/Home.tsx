@@ -203,8 +203,8 @@ export default function Home() {
               variants={fadeUp}
               className="text-base text-white/40 max-w-2xl leading-relaxed"
             >
-              I build production-grade full-stack systems, ML applications, and streaming data
-              pipelines — focused on performance, reliability, and measurable impact.
+              I build full-stack systems, ML applications, and data pipelines — with a focus on
+              performance, reliability, and measurable impact.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-2">

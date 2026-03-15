@@ -27,6 +27,20 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      window.onerror = function(msg, src, line, col, err) {
+        document.getElementById('root').innerHTML =
+          '<div style="padding:40px;font-family:monospace;background:#0b0f14;color:#f87171;min-height:100vh">' +
+          '<h2>JS Error</h2><pre style="color:#fca5a5;white-space:pre-wrap">' + msg + '</pre>' +
+          '<pre style="color:#6b7280;font-size:12px;white-space:pre-wrap">' + src + ':' + line + ':' + col + '</pre>' +
+          '</div>';
+      };
+      window.addEventListener('unhandledrejection', function(e) {
+        document.getElementById('root').innerHTML =
+          '<div style="padding:40px;font-family:monospace;background:#0b0f14;color:#f87171;min-height:100vh">' +
+          '<h2>Unhandled Promise Rejection</h2><pre style="color:#fca5a5;white-space:pre-wrap">' + e.reason + '</pre></div>';
+      });
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

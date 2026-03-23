@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { Github, Star, GitFork, ExternalLink } from 'lucide-react'
+import { Github, Star, ExternalLink } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import { projects } from '../data/projects'
 
@@ -15,21 +15,18 @@ interface GitHubRepo {
   topics: string[]
   updated_at: string
   fork: boolean
-  homepage: string | null
 }
 
 const GITHUB_USER = 'Mithileshan'
 
-// Repos to hide (portfolio site itself)
-const EXCLUDED = ['Mithileshan.github.io']
-
-// Map repo names to project slugs for deduplication
-const REPO_TO_SLUG: Record<string, string> = {
-  'devtracker-x': 'devtracker',
-  'Brain_Tumor_using_YOLOV8': 'brain-tumor-yolov8',
-  'mana-ai': 'mana-ai',
-  'stockpulse-batch-realtime-etl': 'stockpulse-etl',
-}
+// Exact GitHub repo names that already have a featured case-study card
+const FEATURED_REPO_NAMES = new Set([
+  'DevTracker',
+  'Brain_Tumor_using_YOLOV8',
+  'stockpulse-batch-realtime-etl',
+  'mana-ai',
+  'Mithileshan.github.io',
+])
 
 function timeAgo(dateStr: string) {
   const diff = Date.now() - new Date(dateStr).getTime()
@@ -43,12 +40,12 @@ function timeAgo(dateStr: string) {
 
 const langColors: Record<string, string> = {
   TypeScript: '#3178c6',
-  JavaScript: '#f7df1e',
+  JavaScript: '#f1e05a',
   Python: '#3572A5',
   Java: '#b07219',
   HTML: '#e34c26',
   CSS: '#563d7c',
-  Shell: '#89e051',
+  'Jupyter Notebook': '#DA5B0B',
 }
 
 export default function Projects() {
@@ -57,13 +54,16 @@ export default function Projects() {
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    fetch(`https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=100&type=public`)
+    fetch(
+      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=100&type=public`
+    )
       .then(r => r.json())
-      .then((data: GitHubRepo[]) => {
-        const filtered = data
-          .filter(r => !r.fork && !EXCLUDED.includes(r.name))
-          .sort((a, b) => new Date(b.updated_at).getTime() - new Date(a.updated_at).getTime())
-        setRepos(filtered)
+      .then((data: unknown) => {
+        if (!Array.isArray(data)) throw new Error('bad response')
+        const extra = (data as GitHubRepo[]).filter(
+          r => !r.fork && !FEATURED_REPO_NAMES.has(r.name)
+        )
+        setRepos(extra)
         setLoading(false)
       })
       .catch(() => {
@@ -71,10 +71,6 @@ export default function Projects() {
         setLoading(false)
       })
   }, [])
-
-  // Repos that already have a detailed case study card
-  const featuredSlugs = new Set(Object.values(REPO_TO_SLUG))
-  const extraRepos = repos.filter(r => !featuredSlugs.has(REPO_TO_SLUG[r.name] ?? r.name))
 
   return (
     <main className="pt-16 min-h-screen">
@@ -92,13 +88,10 @@ export default function Projects() {
         </motion.div>
 
         {/* Featured — detailed case study cards */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-          className="mb-6"
-        >
-          <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest mb-6">Featured</p>
+        <div className="mb-16">
+          <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest mb-6">
+            Featured
+          </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, i) => (
               <motion.div
@@ -112,17 +105,14 @@ export default function Projects() {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </div>
 
         {/* All GitHub repos */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.3 }}
-          className="mt-16"
-        >
+        <div>
           <div className="flex items-center gap-3 mb-6">
-            <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest">All Repositories</p>
+            <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest">
+              All Repositories
+            </p>
             <a
               href={`https://github.com/${GITHUB_USER}`}
               target="_blank"
@@ -136,18 +126,35 @@ export default function Projects() {
           {loading && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="bg-surface border border-white/8 rounded-xl p-5 animate-pulse h-36" />
+                <div
+                  key={i}
+                  className="bg-surface border border-white/8 rounded-xl p-5 animate-pulse h-36"
+                />
               ))}
             </div>
           )}
 
           {error && (
-            <p className="text-sm text-white/30 py-10 text-center">Could not load GitHub repos. <a href={`https://github.com/${GITHUB_USER}`} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">View on GitHub →</a></p>
+            <p className="text-sm text-white/30 py-10 text-center">
+              Could not load repos.{' '}
+              <a
+                href={`https://github.com/${GITHUB_USER}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                View on GitHub →
+              </a>
+            </p>
           )}
 
-          {!loading && !error && (
+          {!loading && !error && repos.length === 0 && (
+            <p className="text-sm text-white/30 py-10 text-center">No additional repositories found.</p>
+          )}
+
+          {!loading && !error && repos.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {extraRepos.map((repo, i) => (
+              {repos.map((repo, i) => (
                 <motion.a
                   key={repo.id}
                   href={repo.html_url}
@@ -155,14 +162,14 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.35, delay: i * 0.04 }}
+                  transition={{ duration: 0.35, delay: i * 0.05 }}
                   className="group bg-surface border border-white/8 hover:border-accent/30 rounded-xl p-5 flex flex-col gap-3 transition-colors duration-200"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div className="flex items-center gap-2 min-w-0">
                       <Github size={14} className="text-white/30 shrink-0" />
                       <span className="text-sm font-semibold text-white truncate group-hover:text-accent transition-colors">
-                        {repo.name.replace(/-/g, '-')}
+                        {repo.name.replace(/_/g, '-')}
                       </span>
                     </div>
                     <ExternalLink size={13} className="text-white/20 group-hover:text-accent/60 shrink-0 transition-colors mt-0.5" />
@@ -175,7 +182,10 @@ export default function Projects() {
                   {repo.topics.length > 0 && (
                     <div className="flex flex-wrap gap-1">
                       {repo.topics.slice(0, 3).map(t => (
-                        <span key={t} className="text-[10px] px-2 py-0.5 rounded-full bg-accent/8 border border-accent/15 text-accent/70">
+                        <span
+                          key={t}
+                          className="text-[10px] px-2 py-0.5 rounded-full bg-accent/8 border border-accent/15 text-accent/70"
+                        >
                           {t}
                         </span>
                       ))}
@@ -186,7 +196,7 @@ export default function Projects() {
                     {repo.language && (
                       <span className="flex items-center gap-1.5 text-xs text-white/35">
                         <span
-                          className="w-2 h-2 rounded-full"
+                          className="w-2 h-2 rounded-full shrink-0"
                           style={{ background: langColors[repo.language] ?? '#6b7280' }}
                         />
                         {repo.language}
@@ -197,18 +207,15 @@ export default function Projects() {
                         <Star size={11} /> {repo.stargazers_count}
                       </span>
                     )}
-                    {repo.forks_count > 0 && (
-                      <span className="flex items-center gap-1 text-xs text-white/30">
-                        <GitFork size={11} /> {repo.forks_count}
-                      </span>
-                    )}
-                    <span className="text-xs text-white/20 ml-auto">{timeAgo(repo.updated_at)}</span>
+                    <span className="text-xs text-white/20 ml-auto">
+                      {timeAgo(repo.updated_at)}
+                    </span>
                   </div>
                 </motion.a>
               ))}
             </div>
           )}
-        </motion.div>
+        </div>
 
       </div>
     </main>

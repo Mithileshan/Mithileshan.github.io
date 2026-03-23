@@ -25,5 +25,5 @@ export interface Project {
   tech: string[]
   highlights: string[]
   links: ProjectLinks
-  caseStudy: CaseStudyContent
+  caseStudy?: CaseStudyContent
 }

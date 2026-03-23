@@ -57,7 +57,7 @@ export default function CaseStudy() {
     return () => observers.forEach(o => o.disconnect())
   }, [project])
 
-  if (!project) {
+  if (!project || !project.caseStudy) {
     return (
       <main className="pt-16 min-h-screen flex items-center justify-center">
         <div className="text-center">

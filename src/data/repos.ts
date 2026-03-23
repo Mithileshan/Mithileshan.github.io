@@ -1,0 +1,88 @@
+import type { Project } from '../types'
+
+export const repos: Project[] = [
+  {
+    slug: 'chatterbox',
+    title: 'ChatterBox',
+    tagline: 'Room-based real-time chat with WebSocket messaging, typing indicators, and live user presence.',
+    category: 'Full-Stack / Real-Time',
+    featured: false,
+    tech: ['Node.js', 'Express.js', 'Socket.IO', 'Redis', 'HTML5', 'JavaScript'],
+    highlights: [
+      'Multi-room Socket.IO chat — instant messaging with typing indicators and join/leave notifications',
+      'Active user list and timestamped messages — real-time presence for all room participants',
+      'Rate limiting (100 req/15min), health endpoint, and Redis-ready for horizontal scaling',
+    ],
+    links: { github: 'https://github.com/Mithileshan/chatterbox-realtime-chat' },
+  },
+  {
+    slug: 'streampulse',
+    title: 'StreamPulse',
+    tagline: 'Real-time clickstream analytics — Kafka events processed through Python consumers into PostgreSQL, served by a TypeScript analytics API.',
+    category: 'Data Engineering / Streaming',
+    featured: false,
+    tech: ['Apache Kafka', 'Python', 'PostgreSQL', 'TypeScript', 'Node.js', 'Docker'],
+    highlights: [
+      'Producer → Kafka (3 partitions, KRaft) → consumer → dual Postgres tables for raw events and aggregates',
+      'Analytics API: top clicks, per-shortcode stats, and trending queries over configurable time windows',
+      'Kafka UI for live topic visibility — full stack on Docker Compose',
+    ],
+    links: { github: 'https://github.com/Mithileshan/streampulse-kafka-clickstream' },
+  },
+  {
+    slug: 'urly',
+    title: 'URLY',
+    tagline: 'URL shortener with click analytics, Redis caching, and JWT auth — built with TypeScript and Hexagonal Architecture.',
+    category: 'Full-Stack / SaaS',
+    featured: false,
+    tech: ['TypeScript', 'Node.js', 'Express.js', 'MongoDB', 'Redis', 'JWT', 'Docker', 'GitHub Actions'],
+    highlights: [
+      'URL shortening with expiration and per-user ownership — click tracking captures IP, referrer, and user agent',
+      'Redis caching with 1h TTL for redirects and 5min for stats — tiered rate limiting across all endpoints',
+      'JWT auth with owner-only analytics enforcement and Hexagonal Architecture for clean domain separation',
+    ],
+    links: { github: 'https://github.com/Mithileshan/URLY-URL-Shortener-Analytics' },
+  },
+  {
+    slug: 'cinebook',
+    title: 'CineBook',
+    tagline: 'Full-stack MERN movie ticket booking platform with seat selection, show scheduling, and an admin dashboard.',
+    category: 'Full-Stack / SaaS',
+    featured: false,
+    tech: ['React', 'Redux', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'Docker', 'Nginx'],
+    highlights: [
+      'Seat selection with real-time availability — 5 movies, 4 cinemas, 80 showtimes seeded idempotently',
+      'Swagger/OpenAPI 3.0 docs across 50+ endpoints with admin dashboard and booking approval workflows',
+      'QR-encoded ticket confirmation with JWT auth and Dockerized deployment behind Nginx',
+    ],
+    links: { github: 'https://github.com/Mithileshan/movie-ticket-booking-platform' },
+  },
+  {
+    slug: 'csv-etl',
+    title: 'CSV → Postgres ETL',
+    tagline: 'Production-grade CSV→PostgreSQL ETL pipeline with schema validation, quality gates, and idempotent incremental loads.',
+    category: 'Data Engineering',
+    featured: false,
+    tech: ['Python', 'PostgreSQL', 'SQLAlchemy', 'Docker', 'pytest', 'GitHub Actions'],
+    highlights: [
+      'Strict validation gates — email, country codes, multi-format dates — with 5% invalid ratio threshold',
+      'Idempotent upsert via PostgreSQL ON CONFLICT with SHA256 file hashing for deduplication',
+      'Full audit trail: etl_runs and etl_bad_rows tables capturing error counts and load metadata',
+    ],
+    links: { github: 'https://github.com/Mithileshan/csv-to-postgres-etl-pipeline' },
+  },
+  {
+    slug: 'logpulse',
+    title: 'LogPulse',
+    tagline: 'Centralized log aggregation and visualization using Loki, Promtail, and Grafana — Dockerized observability with dashboards and alert rules.',
+    category: 'SRE / Observability',
+    featured: false,
+    tech: ['Loki', 'Promtail', 'Grafana', 'Python', 'Docker Compose'],
+    highlights: [
+      'Centralized log aggregation with 7-day retention and automatic label extraction (service, level, container)',
+      'Pre-built Grafana dashboard with log volume, error count, and error rate panels',
+      'Alert rule firing above 10 errors/5min — failure simulation mode for end-to-end observability testing',
+    ],
+    links: { github: 'https://github.com/Mithileshan/logpulse-observability' },
+  },
+]

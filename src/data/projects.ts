@@ -260,4 +260,20 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: 'tinker',
+    title: 'Tinker',
+    tagline: 'AI-powered document summarization and Q&A platform — upload any document and get instant summaries and context-aware answers.',
+    category: 'AI Product / Hackathon',
+    featured: true,
+    tech: ['Python', 'LLM', 'NLP', 'RAG', 'Flask', 'Streamlit'],
+    highlights: [
+      'Document ingestion pipeline — parses and chunks documents for context-aware Q&A',
+      'LLM-powered summarization and question answering grounded in uploaded document content',
+      'Hackathon project focused on making dense documents instantly queryable',
+    ],
+    links: {
+      github: 'https://github.com/Mithileshan/Document-Summarizer',
+    },
+  },
 ]

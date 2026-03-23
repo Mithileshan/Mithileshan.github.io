@@ -83,12 +83,14 @@ export default function ProjectCard({ project }: { project: Project }) {
               <ExternalLink size={13} /> Demo
             </a>
           )}
-          <Link
-            to={`/projects/${project.slug}`}
-            className="flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-light transition-colors ml-auto"
-          >
-            Case Study <ArrowRight size={13} />
-          </Link>
+          {project.caseStudy && (
+            <Link
+              to={`/projects/${project.slug}`}
+              className="flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent-light transition-colors ml-auto"
+            >
+              Case Study <ArrowRight size={13} />
+            </Link>
+          )}
         </div>
       </div>
     </motion.div>

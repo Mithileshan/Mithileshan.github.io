@@ -5,6 +5,7 @@ interface Job {
   company: string
   location: string
   period: string
+  summary: string
   bullets: string[]
 }
 
@@ -88,8 +89,13 @@ export default function WorkTimeline({ jobs }: { jobs: Job[] }) {
                 </span>
               </div>
 
+              {/* Summary */}
+              <p className="text-sm text-white/50 leading-relaxed italic border-l-2 border-accent/30 pl-4 mb-1">
+                {job.summary}
+              </p>
+
               {/* Bullets */}
-              <ul className="flex flex-col gap-2.5">
+              <ul className="flex flex-col gap-2.5 mt-2">
                 {job.bullets.map((b, j) => (
                   <motion.li
                     key={j}

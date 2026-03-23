@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Github, Linkedin, Mail, ArrowRight, Shield, Brain, Zap, Award, FileText } from 'lucide-react'
+import { Github, Linkedin, Mail, ArrowRight, FileText, ExternalLink } from 'lucide-react'
 import ProjectCard from '../components/ProjectCard'
 import TechChip from '../components/TechChip'
 import WorkTimeline from '../components/WorkTimeline'
@@ -30,24 +30,6 @@ const nameSlide = {
   },
 }
 
-const proofPoints = [
-  {
-    icon: Shield,
-    title: 'Production Mindset',
-    desc: 'Dockerized deployments, CI/CD pipelines, OAuth 2.0 + JWT auth, and 95% test coverage across distributed services at scale.',
-  },
-  {
-    icon: Brain,
-    title: 'ML + Engineering Depth',
-    desc: 'From model training to real UI demos, reproducible pipelines, and two IEEE-published papers on computer vision and ML.',
-  },
-  {
-    icon: Zap,
-    title: 'Streaming + Data',
-    desc: 'Real-time + batch ETL, Kafka/Redpanda pipelines, Redis caching, and observable microservices with measurable performance gains.',
-  },
-]
-
 const skillGroups = [
   { label: 'Languages', skills: ['Java', 'Python', 'JavaScript', 'SQL', 'C'] },
   { label: 'Backend', skills: ['Spring Boot', 'Node.js', 'Express.js', 'Flask', 'REST APIs', 'WebSockets'] },
@@ -65,12 +47,13 @@ const experience = [
     company: 'KST Infotech',
     location: 'Chennai, India',
     period: 'Jan 2024 – Aug 2024',
+    summary: 'Led backend development for two production microservices within a 6-member Agile team, taking ownership of authentication, data optimization, and deployment infrastructure. This role pushed me to think beyond writing code — toward owning reliability, security, and the team\'s engineering standards.',
     bullets: [
-      'Architected and deployed two Spring Boot microservices, reducing deployment time by 30% and enabling independent scaling via Docker and Kubernetes. Designed inter-service communication using REST APIs and asynchronous event-driven patterns to improve system resiliency.',
-      'Implemented OAuth 2.0 and JWT-based authentication with role-based access control, reducing unauthorized access attempts by 40%.',
-      'Optimized PostgreSQL queries through indexing and query restructuring, reducing high-traffic endpoint response times by 30%.',
+      'Architected two Spring Boot microservices with Docker + Kubernetes, cutting deployment time by 30% and enabling independent scaling.',
+      'Implemented OAuth 2.0 + JWT authentication with RBAC, reducing unauthorized access attempts by 40%.',
+      'Optimized PostgreSQL queries through indexing and restructuring, improving high-traffic endpoint response times by 30%.',
       'Engineered Python Flask APIs for I/O-intensive operations, increasing system throughput by 25%.',
-      'Established testing and monitoring practices using JUnit, Mockito, and Log4j, achieving 95% test coverage across distributed services. Collaborated within a 6-member backend team in an Agile environment.',
+      'Established testing practices with JUnit, Mockito, and Log4j — bringing team coverage to 95% across all distributed services.',
     ],
   },
   {
@@ -78,12 +61,13 @@ const experience = [
     company: 'KST Infotech',
     location: 'Chennai, India',
     period: 'Jun 2023 – Jan 2024',
+    summary: 'Joined as an intern and quickly became the go-to person for diagnosing hard-to-reproduce production issues. Resolving 30+ incidents through structured logging gave me a foundation for writing software that is observable and maintainable by design.',
     bullets: [
-      'Developed backend services using Spring Boot (MVC), building REST APIs with structured validation and error handling.',
-      'Designed normalized PostgreSQL schemas and indexing strategies to maintain performance as data volumes scaled.',
-      'Diagnosed and resolved 30+ production issues using structured logging and debugging practices.',
-      'Increased test coverage from 60% to 90% by writing comprehensive JUnit test cases.',
-      'Refactored legacy modules following clean code principles and design patterns to improve maintainability and reduce technical debt.',
+      'Built REST APIs using Spring Boot (MVC) with structured validation and error handling.',
+      'Designed normalized PostgreSQL schemas and indexing strategies to sustain performance at scale.',
+      'Diagnosed and resolved 30+ production issues using structured logging and systematic debugging.',
+      'Grew test coverage from 60% to 90% through comprehensive JUnit test suites.',
+      'Refactored legacy modules following clean code principles to reduce technical debt and improve team velocity.',
     ],
   },
   {
@@ -91,30 +75,13 @@ const experience = [
     company: 'Vectra Technosoft Pvt Ltd',
     location: 'Chennai, India',
     period: 'Mar 2023 – May 2023',
+    summary: 'Joined to build internal tools and ended up redesigning two core workflows. Eliminating 75% of manual data effort and compressing a 2-hour deploy process to 15 minutes taught me how automation compounds — small improvements in infrastructure create outsized gains for every future release.',
     bullets: [
-      'Engineered automated Python data pipelines processing 50K+ records daily, reducing manual effort by 75% and improving accuracy by 25%.',
-      'Built React dashboards integrated with Node.js APIs to provide real-time KPI visibility, accelerating decision-making by 40%.',
-      'Implemented CI/CD pipelines using GitHub Actions and Docker, reducing deployment time from 2 hours to 15 minutes.',
-      'Developed data validation and transformation logic to ensure quality and consistency across multiple client datasets.',
-      'Collaborated with cross-functional teams to deliver analytics solutions aligned with business objectives.',
+      'Built Python data pipelines processing 50K+ records daily, reducing manual effort by 75% and improving accuracy by 25%.',
+      'Developed React dashboards integrated with Node.js APIs for real-time KPI visibility, accelerating decisions by 40%.',
+      'Implemented CI/CD pipelines with GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes.',
+      'Built data validation and transformation logic to ensure quality and consistency across multiple client datasets.',
     ],
-  },
-]
-
-const awards = [
-  {
-    place: '2nd Place',
-    event: 'Luddy Hackathon 4th Edition',
-    org: 'IU Bloomington',
-    date: 'Jan 2025',
-    project: 'Mana.ai — AI meeting assistant',
-  },
-  {
-    place: '2nd Place',
-    event: 'Luddy Hackathon 3rd Edition',
-    org: 'IU Bloomington',
-    date: 'Nov 2024',
-    project: 'Runner-up at consecutive IU hackathons',
   },
 ]
 
@@ -123,11 +90,13 @@ const publications = [
     title: 'Detection of Brain Tumor Using YOLOv5 Algorithm',
     journal: 'IEEE',
     date: 'Mar 2024',
+    link: 'https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Detection+of+Brain+Tumor+Using+YOLOv5+Algorithm',
   },
   {
     title: 'Brain Tumor Detector Using SVM Algorithm',
     journal: 'IEEE',
     date: 'Feb 2023',
+    link: 'https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Brain+Tumor+Detector+Using+SVM+Algorithm',
   },
 ]
 
@@ -143,11 +112,11 @@ export default function Home() {
             variants={stagger}
             initial="hidden"
             animate="visible"
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 items-center text-center"
           >
             <motion.div
               variants={fadeUp}
-              className="inline-flex items-center gap-2 text-accent/80 text-sm font-medium tracking-wide w-fit"
+              className="inline-flex items-center gap-2 text-accent/80 text-sm font-medium tracking-wide"
             >
               <span className="w-8 h-px bg-accent/60" />
               MS CS @ Indiana University Bloomington
@@ -207,7 +176,7 @@ export default function Home() {
               performance, reliability, and measurable impact.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-2">
+            <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-2 justify-center">
               <Link
                 to="/projects"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-bg font-semibold rounded-xl hover:bg-accent-light transition-colors"
@@ -224,7 +193,7 @@ export default function Home() {
               </a>
             </motion.div>
 
-            <motion.div variants={fadeUp} className="flex items-center gap-6 flex-wrap mt-1">
+            <motion.div variants={fadeUp} className="flex items-center gap-6 flex-wrap mt-1 justify-center">
               <a
                 href="https://github.com/Mithileshan"
                 target="_blank"
@@ -248,33 +217,6 @@ export default function Home() {
                 <Mail size={16} /> mithilays2402@gmail.com
               </a>
             </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Proof Points */}
-      <section className="py-24 px-6 border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: '-80px' }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          >
-            {proofPoints.map(({ icon: Icon, title, desc }) => (
-              <motion.div
-                key={title}
-                variants={fadeUp}
-                className="bg-surface border border-white/8 rounded-2xl p-6"
-              >
-                <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4">
-                  <Icon size={20} className="text-accent" />
-                </div>
-                <h3 className="font-bold text-white mb-2">{title}</h3>
-                <p className="text-sm text-white/50 leading-relaxed">{desc}</p>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </section>
@@ -303,7 +245,7 @@ export default function Home() {
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
             {featuredProjects.map(project => (
-              <motion.div key={project.slug} variants={fadeUp}>
+              <motion.div key={project.slug} variants={fadeUp} className="h-full">
                 <ProjectCard project={project} />
               </motion.div>
             ))}
@@ -381,49 +323,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Awards */}
-      <section className="py-16 px-6 border-t border-white/5">
-        <div className="max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
-          >
-            <h2 className="text-3xl font-bold text-white mb-2">Awards</h2>
-          </motion.div>
-
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            {awards.map(award => (
-              <motion.div
-                key={award.event}
-                variants={fadeUp}
-                className="flex-1 bg-gradient-to-br from-amber-400/8 to-transparent border border-amber-400/15 rounded-2xl px-6 py-5 flex items-start gap-4"
-              >
-                <Award size={24} className="text-amber-400 shrink-0 mt-0.5" />
-                <div>
-                  <p className="text-xs font-semibold text-amber-400/70 uppercase tracking-widest mb-1">
-                    {award.place}
-                  </p>
-                  <p className="text-white font-bold">{award.event}</p>
-                  <p className="text-sm text-white/40 mt-0.5">
-                    {award.org} · {award.date}
-                  </p>
-                  <p className="text-xs text-white/30 mt-1">{award.project}</p>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
       {/* Publications */}
       <section className="py-16 px-6 border-t border-white/5">
         <div className="max-w-5xl mx-auto">
@@ -445,18 +344,22 @@ export default function Home() {
             className="flex flex-col gap-3"
           >
             {publications.map(pub => (
-              <motion.div
-                key={pub.title}
-                variants={fadeUp}
-                className="bg-surface border border-white/8 rounded-xl px-6 py-4 flex items-center gap-4"
-              >
-                <FileText size={18} className="text-accent/60 shrink-0" />
-                <div className="flex-1 min-w-0">
-                  <p className="text-white font-medium text-sm leading-snug">{pub.title}</p>
-                  <p className="text-xs text-white/35 mt-0.5">
-                    {pub.journal} · {pub.date}
-                  </p>
-                </div>
+              <motion.div key={pub.title} variants={fadeUp}>
+                <a
+                  href={pub.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-surface border border-white/8 hover:border-accent/30 rounded-xl px-6 py-4 flex items-center gap-4 transition-colors duration-200"
+                >
+                  <FileText size={18} className="text-accent/60 shrink-0" />
+                  <div className="flex-1 min-w-0">
+                    <p className="text-white font-medium text-sm leading-snug group-hover:text-accent transition-colors">{pub.title}</p>
+                    <p className="text-xs text-white/35 mt-0.5">
+                      {pub.journal} · {pub.date}
+                    </p>
+                  </div>
+                  <ExternalLink size={14} className="text-white/20 group-hover:text-accent/60 shrink-0 transition-colors" />
+                </a>
               </motion.div>
             ))}
           </motion.div>

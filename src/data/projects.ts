@@ -408,5 +408,51 @@ export const projects: Project[] = [
     links: {
       github: 'https://github.com/Mithileshan/Document-Summarizer',
     },
+    caseStudy: {
+      problem: [
+        'Dense documents — research papers, legal contracts, technical manuals — require reading everything before finding relevant information.',
+        'Generic LLM chat responses hallucinate facts not present in the document; no grounding mechanism means no trust in the output.',
+        'Non-technical users need a zero-friction interface to query documents without writing code or prompts.',
+      ],
+      solution: [
+        'Built a RAG pipeline: uploaded documents are parsed, split into overlapping chunks, and embedded into a vector store for semantic retrieval.',
+        'User query retrieves the top-k most relevant chunks via cosine similarity, which are then injected as grounding context into the LLM prompt.',
+        'Streamlit frontend provides a no-code interface — upload a PDF or text file, ask a question, get a grounded answer instantly.',
+        'Separate summarization mode passes the full document (chunked for context limits) through the LLM to produce a structured summary.',
+      ],
+      architecture: [
+        'Streamlit UI: file uploader + question input field + response display',
+        'Flask REST backend: document upload endpoint, chunk storage, embedding generation, query endpoint',
+        'Document ingestion: parse raw text from PDF/TXT → split into overlapping chunks (chunk size + overlap configurable) → generate embeddings → store in in-memory vector index',
+        'Query path: user question → embed query → cosine similarity search → retrieve top-k chunks → build prompt with retrieved context → LLM generates grounded answer',
+        'Summarization path: chunk document to fit context window → pass each chunk to LLM with summarization prompt → combine chunk summaries into final summary',
+      ],
+      decisions: [
+        'RAG over fine-tuning: fine-tuning requires labeled training data and GPU compute; RAG works with any document at inference time with no training step — right tradeoff for a hackathon demo',
+        'Overlapping chunks over hard splits: overlapping chunks prevent context loss at chunk boundaries — important for documents where key information spans paragraph breaks',
+        'Streamlit over custom React frontend: Streamlit reduces UI development to zero for a demo tool — lets effort concentrate on the pipeline rather than frontend implementation',
+        'Flask as API layer: separates the pipeline logic from the UI, keeps the architecture testable even if the Streamlit layer changes',
+        'Prompt injection with retrieved context: explicitly inserting chunk text into the prompt forces the LLM to answer from document content, reducing hallucination on out-of-document facts',
+      ],
+      impact: [
+        'Any document queryable in seconds — upload to first answer in under 30 seconds',
+        'Responses grounded in retrieved document chunks — LLM cannot answer from general knowledge alone',
+        'Zero-friction interface: no code, no prompt engineering required from the user',
+        'Demonstrated full RAG pipeline end-to-end: ingestion → chunking → embedding → retrieval → generation',
+      ],
+      challenges: [
+        'Chunking quality: splitting at arbitrary character boundaries breaks sentences mid-thought — solved with sentence-aware splitting and overlapping windows',
+        'Context window limits: large documents exceed LLM context limits — solved by chunking and retrieving only the top-k most relevant chunks per query',
+        'Hallucination on edge-case queries: LLM still occasionally generates text beyond the retrieved context — partially mitigated by explicit system prompt instructions to only use provided context',
+        'Embedding latency: embedding all chunks on upload adds startup delay — acceptable for a demo but would need async processing for production',
+      ],
+      nextSteps: [
+        'Persistent vector store (FAISS or pgvector) to survive server restarts',
+        'Multi-document support with document-scoped retrieval',
+        'Conversation memory for multi-turn Q&A sessions',
+        'Chunk source highlighting — show which part of the document each answer came from',
+        'Streaming LLM responses for faster perceived latency',
+      ],
+    },
   },
 ]

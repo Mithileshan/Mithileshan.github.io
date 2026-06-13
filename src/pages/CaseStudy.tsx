@@ -4,6 +4,9 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, Github, ExternalLink } from 'lucide-react'
 import TechChip from '../components/TechChip'
 import { projects } from '../data/projects'
+import { repos } from '../data/repos'
+
+const allProjects = [...projects, ...repos]
 
 const sectionIds = [
   'problem',
@@ -29,7 +32,7 @@ const sectionLabels: Record<SectionId, string> = {
 
 export default function CaseStudy() {
   const { slug } = useParams()
-  const project = projects.find(p => p.slug === slug)
+  const project = allProjects.find(p => p.slug === slug)
   const [activeSection, setActiveSection] = useState<SectionId>('problem')
   const sectionRefs = useRef<Partial<Record<SectionId, HTMLElement | null>>>({})
 

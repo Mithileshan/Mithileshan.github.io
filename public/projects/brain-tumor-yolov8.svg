@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
   <defs>
     <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0L0 0 0 40" fill="none" stroke="white" stroke-width="0.4" opacity="0.04"/>
+      <path d="M40 0L0 0 0 40" fill="none" stroke="white" stroke-width="0.4" stroke-opacity="0.04"/>
     </pattern>
     <linearGradient id="bgb" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#1a0510"/>
@@ -19,17 +19,17 @@
   <ellipse cx="280" cy="115" rx="180" ry="100" fill="url(#brainGlow)"/>
 
   <!-- MRI scan frame -->
-  <rect x="60" y="35" width="180" height="150" rx="4" fill="#000000" opacity="0.4" stroke="#f43f5e" stroke-width="1" opacity="0.4"/>
+  <rect x="60" y="35" width="180" height="150" rx="4" fill="#000000" opacity="0.4" stroke="#f43f5e" stroke-width="1" stroke-opacity="0.4"/>
   <!-- Brain silhouette (simplified) -->
-  <ellipse cx="150" cy="105" rx="72" ry="62" fill="#1a0a12" stroke="#f43f5e" stroke-width="0.8" opacity="0.5"/>
+  <ellipse cx="150" cy="105" rx="72" ry="62" fill="#1a0a12" stroke="#f43f5e" stroke-width="0.8" stroke-opacity="0.5"/>
   <!-- Brain folds lines -->
-  <path d="M110 88 Q130 78 150 85 Q170 92 185 84" fill="none" stroke="#f43f5e" stroke-width="0.8" opacity="0.3"/>
-  <path d="M100 105 Q120 96 140 100 Q160 104 175 96" fill="none" stroke="#f43f5e" stroke-width="0.8" opacity="0.25"/>
-  <path d="M108 122 Q128 114 148 118 Q168 122 183 115" fill="none" stroke="#f43f5e" stroke-width="0.8" opacity="0.2"/>
+  <path d="M110 88 Q130 78 150 85 Q170 92 185 84" fill="none" stroke="#f43f5e" stroke-width="0.8" stroke-opacity="0.3"/>
+  <path d="M100 105 Q120 96 140 100 Q160 104 175 96" fill="none" stroke="#f43f5e" stroke-width="0.8" stroke-opacity="0.25"/>
+  <path d="M108 122 Q128 114 148 118 Q168 122 183 115" fill="none" stroke="#f43f5e" stroke-width="0.8" stroke-opacity="0.2"/>
   <!-- Tumor region (highlighted) -->
   <ellipse cx="170" cy="88" rx="18" ry="15" fill="#f43f5e" opacity="0.25"/>
   <!-- Bounding box -->
-  <rect x="148" y="70" width="44" height="36" rx="2" fill="none" stroke="#f43f5e" stroke-width="2" opacity="0.9"/>
+  <rect x="148" y="70" width="44" height="36" rx="2" fill="none" stroke="#f43f5e" stroke-width="2" stroke-opacity="0.9"/>
   <!-- Corner marks -->
   <line x1="148" y1="70" x2="156" y2="70" stroke="#fbbf24" stroke-width="2"/>
   <line x1="148" y1="70" x2="148" y2="78" stroke="#fbbf24" stroke-width="2"/>
@@ -46,13 +46,13 @@
   <text x="150" y="175" font-family="monospace" font-size="8" fill="#ffffff" opacity="0.3" text-anchor="middle">MRI SCAN</text>
 
   <!-- Arrow -->
-  <line x1="254" y1="110" x2="295" y2="110" stroke="#f43f5e" stroke-width="1.5" opacity="0.5"/>
+  <line x1="254" y1="110" x2="295" y2="110" stroke="#f43f5e" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="295,105 305,110 295,115" fill="#f43f5e" opacity="0.5"/>
 
   <!-- YOLOv8 box -->
   <rect x="315" y="76" width="120" height="68" rx="6" fill="#f43f5e" opacity="0.07" stroke="#f43f5e" stroke-width="1.5"/>
   <text x="375" y="98" font-family="monospace" font-size="10" fill="#fb7185" text-anchor="middle" font-weight="600">YOLOv8</text>
-  <line x1="325" y1="105" x2="425" y2="105" stroke="#f43f5e" stroke-width="0.5" opacity="0.2"/>
+  <line x1="325" y1="105" x2="425" y2="105" stroke="#f43f5e" stroke-width="0.5" stroke-opacity="0.2"/>
   <text x="375" y="117" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">object detection</text>
   <text x="375" y="129" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.35">custom trained</text>
   <text x="375" y="141" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">Roboflow dataset</text>
@@ -75,7 +75,7 @@
   <text x="620" y="155" font-family="monospace" font-size="7.5" fill="#06b6d4" text-anchor="middle" opacity="0.8">3 classes · 800 imgs</text>
 
   <!-- Flask badge -->
-  <rect x="695" y="94" width="82" height="30" rx="4" fill="#ffffff" opacity="0.04" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+  <rect x="695" y="94" width="82" height="30" rx="4" fill="#ffffff" opacity="0.04" stroke="#ffffff" stroke-width="0.5" stroke-opacity="0.2"/>
   <text x="736" y="107" font-family="monospace" font-size="7.5" fill="#ffffff" text-anchor="middle" opacity="0.5">Flask · REST API</text>
   <text x="736" y="118" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">heatmap overlay</text>
 

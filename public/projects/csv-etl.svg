@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
   <defs>
     <pattern id="gridCSV" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M36 0L0 0 0 36" fill="none" stroke="white" stroke-width="0.4" opacity="0.04"/>
+      <path d="M36 0L0 0 0 36" fill="none" stroke="white" stroke-width="0.4" stroke-opacity="0.04"/>
     </pattern>
     <linearGradient id="bgCSV" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#001a18"/>
@@ -30,11 +30,11 @@
   <text x="58" y="90" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">watermark</text>
   <text x="58" y="101" font-family="monospace" font-size="6" fill="#2dd4bf" text-anchor="middle" opacity="0.5">phase 1</text>
   <!-- File rows -->
-  <line x1="28" y1="110" x2="88" y2="110" stroke="#14b8a6" stroke-width="0.5" opacity="0.15"/>
+  <line x1="28" y1="110" x2="88" y2="110" stroke="#14b8a6" stroke-width="0.5" stroke-opacity="0.15"/>
   <text x="58" y="121" font-family="monospace" font-size="6" fill="#ffffff" text-anchor="middle" opacity="0.25">rows parsed</text>
 
   <!-- Arrow 1 -->
-  <line x1="97" y1="85" x2="112" y2="85" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="97" y1="85" x2="112" y2="85" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="112,80 122,85 112,90" fill="#14b8a6" opacity="0.5"/>
 
   <!-- Stage 2: Validate -->
@@ -43,13 +43,13 @@
   <text x="168" y="79" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">email format</text>
   <text x="168" y="90" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">required fields</text>
   <text x="168" y="101" font-family="monospace" font-size="6" fill="#2dd4bf" text-anchor="middle" opacity="0.5">phase 2</text>
-  <line x1="136" y1="110" x2="200" y2="110" stroke="#14b8a6" stroke-width="0.5" opacity="0.12"/>
+  <line x1="136" y1="110" x2="200" y2="110" stroke="#14b8a6" stroke-width="0.5" stroke-opacity="0.12"/>
   <!-- Bad rows badge -->
-  <rect x="128" y="140" width="80" height="18" rx="3" fill="#f87171" opacity="0.1" stroke="#f87171" stroke-width="0.6" opacity="0.4"/>
+  <rect x="128" y="140" width="80" height="18" rx="3" fill="#f87171" opacity="0.1" stroke="#f87171" stroke-width="0.6" stroke-opacity="0.4"/>
   <text x="168" y="152" font-family="monospace" font-size="6.5" fill="#f87171" text-anchor="middle" opacity="0.8">MAX_INVALID 5%</text>
 
   <!-- Arrow 2 -->
-  <line x1="210" y1="85" x2="228" y2="85" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="210" y1="85" x2="228" y2="85" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="228,80 238,85 228,90" fill="#14b8a6" opacity="0.5"/>
 
   <!-- Stage 3: Dedupe -->
@@ -59,11 +59,11 @@
   <text x="284" y="90" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">email unique</text>
   <text x="284" y="101" font-family="monospace" font-size="6" fill="#2dd4bf" text-anchor="middle" opacity="0.5">phase 3</text>
   <!-- Dedupe badge -->
-  <rect x="242" y="140" width="84" height="18" rx="3" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="0.6" opacity="0.3"/>
+  <rect x="242" y="140" width="84" height="18" rx="3" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="0.6" stroke-opacity="0.3"/>
   <text x="284" y="152" font-family="monospace" font-size="6.5" fill="#fbbf24" text-anchor="middle" opacity="0.7">0 dupe emails</text>
 
   <!-- Arrow 3 -->
-  <line x1="328" y1="85" x2="344" y2="85" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="328" y1="85" x2="344" y2="85" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="344,80 354,85 344,90" fill="#14b8a6" opacity="0.5"/>
 
   <!-- Stage 4: Transform -->
@@ -74,7 +74,7 @@
   <text x="400" y="101" font-family="monospace" font-size="6" fill="#2dd4bf" text-anchor="middle" opacity="0.5">phase 4</text>
 
   <!-- Arrow 4 -->
-  <line x1="444" y1="85" x2="460" y2="85" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="444" y1="85" x2="460" y2="85" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="460,80 470,85 460,90" fill="#14b8a6" opacity="0.5"/>
 
   <!-- Stage 5: Load -->
@@ -83,11 +83,11 @@
   <text x="518" y="79" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">staging_users</text>
   <text x="518" y="90" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">ON CONFLICT</text>
   <text x="518" y="101" font-family="monospace" font-size="6" fill="#2dd4bf" text-anchor="middle" opacity="0.5">phase 5</text>
-  <rect x="476" y="140" width="84" height="18" rx="3" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="0.6" opacity="0.3"/>
+  <rect x="476" y="140" width="84" height="18" rx="3" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="0.6" stroke-opacity="0.3"/>
   <text x="518" y="152" font-family="monospace" font-size="6.5" fill="#34d399" text-anchor="middle" opacity="0.7">idempotent</text>
 
   <!-- Arrow 5 -->
-  <line x1="562" y1="85" x2="578" y2="85" stroke="#14b8a6" stroke-width="1.5" opacity="0.5"/>
+  <line x1="562" y1="85" x2="578" y2="85" stroke="#14b8a6" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="578,80 588,85 578,90" fill="#14b8a6" opacity="0.5"/>
 
   <!-- Stage 6: Report -->
@@ -100,14 +100,14 @@
   <!-- Pytest badge -->
   <rect x="693" y="45" width="90" height="80" rx="6" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6" stroke-width="1"/>
   <text x="738" y="68" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle" font-weight="600">pytest</text>
-  <line x1="703" y1="75" x2="773" y2="75" stroke="#8b5cf6" stroke-width="0.5" opacity="0.2"/>
+  <line x1="703" y1="75" x2="773" y2="75" stroke="#8b5cf6" stroke-width="0.5" stroke-opacity="0.2"/>
   <text x="738" y="87" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">12 test classes</text>
   <text x="738" y="99" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">fixtures + mocks</text>
   <text x="738" y="111" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.25">edge cases</text>
   <text x="738" y="120" font-family="monospace" font-size="6" fill="#a78bfa" text-anchor="middle" opacity="0.5">phase rollback</text>
 
   <!-- Bottom info bar -->
-  <rect x="20" y="172" width="760" height="26" rx="4" fill="#14b8a6" opacity="0.04" stroke="#14b8a6" stroke-width="0.5" opacity="0.15"/>
+  <rect x="20" y="172" width="760" height="26" rx="4" fill="#14b8a6" opacity="0.04" stroke="#14b8a6" stroke-width="0.5" stroke-opacity="0.15"/>
   <text x="400" y="188" font-family="monospace" font-size="7.5" fill="#2dd4bf" text-anchor="middle" opacity="0.6">Python · PostgreSQL · SHA256 watermark · MAX_INVALID_RATIO=0.05 · MAX_DUPLICATE_EMAILS=0</text>
 
   <!-- Top label -->

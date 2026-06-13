@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
   <defs>
     <pattern id="gridLP" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0L0 0 0 40" fill="none" stroke="white" stroke-width="0.4" opacity="0.04"/>
+      <path d="M40 0L0 0 0 40" fill="none" stroke="white" stroke-width="0.4" stroke-opacity="0.04"/>
     </pattern>
     <linearGradient id="bgLP" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0f0800"/>
@@ -16,7 +16,7 @@
   <ellipse cx="580" cy="100" rx="160" ry="80" fill="#f97316" opacity="0.04"/>
 
   <!-- Log stream (left panel) -->
-  <rect x="22" y="40" width="310" height="152" rx="6" fill="#000000" opacity="0.3" stroke="#f97316" stroke-width="0.8" opacity="0.3"/>
+  <rect x="22" y="40" width="310" height="152" rx="6" fill="#000000" opacity="0.3" stroke="#f97316" stroke-width="0.8" stroke-opacity="0.3"/>
   <!-- Header -->
   <rect x="22" y="40" width="310" height="22" rx="6" fill="#f97316" opacity="0.07"/>
   <text x="38" y="55" font-family="monospace" font-size="7.5" fill="#fb923c" opacity="0.8">log-generator · live</text>
@@ -35,39 +35,39 @@
   <rect x="32" y="180" width="120" height="8" rx="1" fill="#f97316" opacity="0.1"/>
 
   <!-- Promtail badge -->
-  <rect x="30" y="198" width="90" height="14" rx="3" fill="#f97316" opacity="0.08" stroke="#f97316" stroke-width="0.5" opacity="0.3"/>
+  <rect x="30" y="198" width="90" height="14" rx="3" fill="#f97316" opacity="0.08" stroke="#f97316" stroke-width="0.5" stroke-opacity="0.3"/>
   <text x="75" y="208" font-family="monospace" font-size="6.5" fill="#fb923c" text-anchor="middle" opacity="0.7">Promtail · scrape</text>
   <!-- Loki badge -->
-  <rect x="130" y="198" width="90" height="14" rx="3" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="0.5" opacity="0.3"/>
+  <rect x="130" y="198" width="90" height="14" rx="3" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="0.5" stroke-opacity="0.3"/>
   <text x="175" y="208" font-family="monospace" font-size="6.5" fill="#fbbf24" text-anchor="middle" opacity="0.7">Loki 3.4 · ingest</text>
   <!-- Arrow -->
-  <line x1="122" y1="205" x2="130" y2="205" stroke="#f97316" stroke-width="1" opacity="0.4"/>
+  <line x1="122" y1="205" x2="130" y2="205" stroke="#f97316" stroke-width="1" stroke-opacity="0.4"/>
 
   <!-- Arrow to chart -->
-  <line x1="345" y1="110" x2="378" y2="110" stroke="#f97316" stroke-width="1.5" opacity="0.5"/>
+  <line x1="345" y1="110" x2="378" y2="110" stroke="#f97316" stroke-width="1.5" stroke-opacity="0.5"/>
   <polygon points="378,105 388,110 378,115" fill="#f97316" opacity="0.5"/>
 
   <!-- Grafana panel -->
-  <rect x="392" y="38" width="300" height="154" rx="6" fill="#000000" opacity="0.2" stroke="#f97316" stroke-width="0.8" opacity="0.3"/>
+  <rect x="392" y="38" width="300" height="154" rx="6" fill="#000000" opacity="0.2" stroke="#f97316" stroke-width="0.8" stroke-opacity="0.3"/>
   <!-- Grafana header -->
   <rect x="392" y="38" width="300" height="20" rx="6" fill="#f97316" opacity="0.07"/>
   <text x="408" y="52" font-family="monospace" font-size="7.5" fill="#fb923c" opacity="0.8">Grafana · Error Rate · 15m window</text>
 
   <!-- Time series chart -->
   <!-- Grid -->
-  <line x1="402" y1="90"  x2="682" y2="90"  stroke="#f97316" stroke-width="0.4" opacity="0.1"/>
-  <line x1="402" y1="112" x2="682" y2="112" stroke="#f97316" stroke-width="0.4" opacity="0.1"/>
-  <line x1="402" y1="134" x2="682" y2="134" stroke="#f97316" stroke-width="0.4" opacity="0.1"/>
-  <line x1="402" y1="156" x2="682" y2="156" stroke="#f97316" stroke-width="0.4" opacity="0.1"/>
+  <line x1="402" y1="90"  x2="682" y2="90"  stroke="#f97316" stroke-width="0.4" stroke-opacity="0.1"/>
+  <line x1="402" y1="112" x2="682" y2="112" stroke="#f97316" stroke-width="0.4" stroke-opacity="0.1"/>
+  <line x1="402" y1="134" x2="682" y2="134" stroke="#f97316" stroke-width="0.4" stroke-opacity="0.1"/>
+  <line x1="402" y1="156" x2="682" y2="156" stroke="#f97316" stroke-width="0.4" stroke-opacity="0.1"/>
   <!-- Y axis labels -->
   <text x="400" y="93"  font-family="monospace" font-size="6" fill="#ffffff" text-anchor="end" opacity="0.25">20</text>
   <text x="400" y="115" font-family="monospace" font-size="6" fill="#ffffff" text-anchor="end" opacity="0.25">10</text>
   <text x="400" y="137" font-family="monospace" font-size="6" fill="#ffffff" text-anchor="end" opacity="0.25">5</text>
   <text x="400" y="159" font-family="monospace" font-size="6" fill="#ffffff" text-anchor="end" opacity="0.25">0</text>
   <!-- Low baseline then spike -->
-  <polyline points="402,150 430,148 450,145 468,142 486,138 504,130 518,118 532,100 548,88 562,84 578,87 594,95 610,108 625,120 640,132 655,143 670,149 682,151" fill="none" stroke="#f97316" stroke-width="2" opacity="0.8"/>
+  <polyline points="402,150 430,148 450,145 468,142 486,138 504,130 518,118 532,100 548,88 562,84 578,87 594,95 610,108 625,120 640,132 655,143 670,149 682,151" fill="none" stroke="#f97316" stroke-width="2" stroke-opacity="0.8"/>
   <!-- Alert threshold line -->
-  <line x1="402" y1="100" x2="682" y2="100" stroke="#f87171" stroke-width="1" opacity="0.5" stroke-dasharray="5,3"/>
+  <line x1="402" y1="100" x2="682" y2="100" stroke="#f87171" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="5,3"/>
   <text x="685" y="103" font-family="monospace" font-size="6" fill="#f87171" opacity="0.7">threshold</text>
   <!-- Area fill under spike -->
   <polygon points="502,156 518,118 532,100 548,88 562,84 578,87 594,95 610,108 625,120 640,156" fill="#f97316" opacity="0.08"/>

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
   <defs>
     <pattern id="dotsCB" width="20" height="20" patternUnits="userSpaceOnUse">
       <circle cx="10" cy="10" r="0.7" fill="white" opacity="0.05"/>
@@ -104,9 +104,9 @@
   <text x="555" y="153" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">80 showtimes · 120 seats</text>
 
   <!-- Stats box -->
-  <rect x="644" y="72" width="132" height="76" rx="6" fill="#eab308" opacity="0.05" stroke="#eab308" stroke-width="0.8" opacity="0.3"/>
+  <rect x="644" y="72" width="132" height="76" rx="6" fill="#eab308" opacity="0.05" stroke="#eab308" stroke-width="0.8" stroke-opacity="0.3"/>
   <text x="710" y="90" font-family="monospace" font-size="8" fill="#eab308" text-anchor="middle">Material-UI</text>
-  <line x1="654" y1="96" x2="766" y2="96" stroke="#eab308" stroke-width="0.5" opacity="0.15"/>
+  <line x1="654" y1="96" x2="766" y2="96" stroke="#eab308" stroke-width="0.5" stroke-opacity="0.15"/>
   <text x="710" y="108" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">qrcode library</text>
   <text x="710" y="120" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.35">idempotent seeding</text>
   <text x="710" y="132" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">MySQL · JPA</text>

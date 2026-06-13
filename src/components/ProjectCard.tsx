@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: { project: Project }) {
       {/* Image / placeholder */}
       <div className="w-full h-44 bg-[#0d1724] border-b border-white/5 overflow-hidden relative flex items-center justify-center">
         <img
-          src={`/projects/${project.slug}.png`}
+          src={`/projects/${project.slug}.svg`}
           alt={project.title}
           className="w-full h-full object-cover absolute inset-0"
           onError={(e) => { e.currentTarget.style.display = 'none' }}

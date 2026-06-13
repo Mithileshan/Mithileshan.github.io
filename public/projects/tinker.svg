@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+  <defs>
+    <pattern id="gridT" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0L0 0 0 32" fill="none" stroke="white" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+    <linearGradient id="bgT" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e0518"/>
+      <stop offset="100%" stop-color="#120a1e"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="220" fill="url(#bgT)"/>
+  <rect width="800" height="220" fill="url(#gridT)"/>
+
+  <!-- Glows -->
+  <ellipse cx="150" cy="110" rx="120" ry="70" fill="#a855f7" opacity="0.06"/>
+  <ellipse cx="580" cy="110" rx="130" ry="70" fill="#a855f7" opacity="0.04"/>
+
+  <!-- Source document (left) -->
+  <rect x="30" y="55" width="100" height="120" rx="5" fill="#a855f7" opacity="0.07" stroke="#a855f7" stroke-width="1.2" opacity="0.5"/>
+  <text x="80" y="78" font-family="monospace" font-size="8" fill="#c084fc" text-anchor="middle" opacity="0.8">document.pdf</text>
+  <!-- Doc lines -->
+  <line x1="46" y1="90" x2="114" y2="90" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+  <line x1="46" y1="100" x2="114" y2="100" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+  <line x1="46" y1="110" x2="114" y2="110" stroke="#a855f7" stroke-width="1" opacity="0.3"/>
+  <line x1="46" y1="120" x2="100" y2="120" stroke="#a855f7" stroke-width="1" opacity="0.25"/>
+  <line x1="46" y1="130" x2="108" y2="130" stroke="#a855f7" stroke-width="1" opacity="0.2"/>
+  <line x1="46" y1="140" x2="90"  y2="140" stroke="#a855f7" stroke-width="1" opacity="0.15"/>
+
+  <!-- Arrow to chunker -->
+  <line x1="133" y1="110" x2="162" y2="110" stroke="#a855f7" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="162,105 172,110 162,115" fill="#a855f7" opacity="0.5"/>
+
+  <!-- Chunker -->
+  <rect x="178" y="88" width="90" height="44" rx="5" fill="#a855f7" opacity="0.08" stroke="#a855f7" stroke-width="1"/>
+  <text x="223" y="107" font-family="monospace" font-size="8" fill="#c084fc" text-anchor="middle" font-weight="600">Chunker</text>
+  <text x="223" y="120" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">512 tok · overlap</text>
+  <text x="223" y="130" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">LangChain</text>
+
+  <!-- Chunks flowing down -->
+  <rect x="186" y="145" width="70" height="12" rx="2" fill="#a855f7" opacity="0.2"/>
+  <rect x="186" y="161" width="70" height="12" rx="2" fill="#a855f7" opacity="0.15"/>
+  <rect x="186" y="177" width="70" height="12" rx="2" fill="#a855f7" opacity="0.1"/>
+  <text x="221" y="154" font-family="monospace" font-size="6" fill="#c084fc" text-anchor="middle" opacity="0.7">chunk 1</text>
+  <text x="221" y="170" font-family="monospace" font-size="6" fill="#c084fc" text-anchor="middle" opacity="0.5">chunk 2</text>
+  <text x="221" y="186" font-family="monospace" font-size="6" fill="#c084fc" text-anchor="middle" opacity="0.35">chunk 3</text>
+
+  <!-- Arrow to embeddings -->
+  <line x1="270" y1="110" x2="306" y2="110" stroke="#6366f1" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="306,105 316,110 306,115" fill="#6366f1" opacity="0.5"/>
+
+  <!-- Embeddings / FAISS -->
+  <rect x="324" y="76" width="100" height="68" rx="6" fill="#6366f1" opacity="0.08" stroke="#6366f1" stroke-width="1.2"/>
+  <text x="374" y="97" font-family="monospace" font-size="8.5" fill="#818cf8" text-anchor="middle" font-weight="600">FAISS</text>
+  <text x="374" y="110" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">vector store</text>
+  <!-- Vector dots -->
+  <circle cx="350" cy="124" r="3" fill="#818cf8" opacity="0.5"/>
+  <circle cx="362" cy="120" r="3" fill="#818cf8" opacity="0.6"/>
+  <circle cx="374" cy="128" r="3" fill="#818cf8" opacity="0.4"/>
+  <circle cx="386" cy="122" r="3" fill="#818cf8" opacity="0.7"/>
+  <circle cx="398" cy="118" r="3" fill="#818cf8" opacity="0.5"/>
+  <text x="374" y="140" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">OpenAI embeddings</text>
+
+  <!-- Arrow to retrieval -->
+  <line x1="426" y1="110" x2="462" y2="110" stroke="#06b6d4" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="462,105 472,110 462,115" fill="#06b6d4" opacity="0.5"/>
+
+  <!-- Query + Retrieval -->
+  <rect x="478" y="86" width="100" height="48" rx="6" fill="#06b6d4" opacity="0.07" stroke="#06b6d4" stroke-width="1.2"/>
+  <text x="528" y="105" font-family="monospace" font-size="8.5" fill="#06b6d4" text-anchor="middle" font-weight="600">Retrieval</text>
+  <text x="528" y="118" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">top-k similarity</text>
+  <text x="528" y="129" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">cosine · MMR</text>
+
+  <!-- Arrow to LLM -->
+  <line x1="580" y1="110" x2="614" y2="110" stroke="#a855f7" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="614,105 624,110 614,115" fill="#a855f7" opacity="0.5"/>
+
+  <!-- Answer bubble -->
+  <rect x="636" y="68" width="138" height="84" rx="8" fill="#a855f7" opacity="0.08" stroke="#a855f7" stroke-width="1.2"/>
+  <text x="705" y="88" font-family="monospace" font-size="8.5" fill="#c084fc" text-anchor="middle" font-weight="600">GPT-4o</text>
+  <line x1="648" y1="96" x2="762" y2="96" stroke="#a855f7" stroke-width="0.5" opacity="0.2"/>
+  <text x="705" y="108" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.5">grounded answer</text>
+  <text x="705" y="119" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">source citations</text>
+  <text x="705" y="130" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">hallucination guard</text>
+  <text x="705" y="144" font-family="monospace" font-size="6" fill="#c084fc" text-anchor="middle" opacity="0.5">Flask · Streamlit</text>
+
+  <!-- Top label -->
+  <text x="32" y="26" font-family="sans-serif" font-size="10" fill="#a855f7" opacity="0.7" font-weight="600" letter-spacing="2">AI SYSTEMS · RAG PIPELINE · LANGCHAIN + FAISS</text>
+</svg>

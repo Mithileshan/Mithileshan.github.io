@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+  <defs>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="12" cy="12" r="0.8" fill="white" opacity="0.06"/>
+    </pattern>
+    <linearGradient id="bgm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a0f00"/>
+      <stop offset="100%" stop-color="#1a1400"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="220" fill="url(#bgm)"/>
+  <rect width="800" height="220" fill="url(#dots)"/>
+
+  <!-- Glows -->
+  <ellipse cx="160" cy="110" rx="130" ry="70" fill="#f59e0b" opacity="0.05"/>
+  <ellipse cx="620" cy="110" rx="130" ry="70" fill="#10b981" opacity="0.04"/>
+
+  <!-- Audio waveform (left) -->
+  <rect x="30" y="60" width="200" height="100" rx="6" fill="#f59e0b" opacity="0.06" stroke="#f59e0b" stroke-width="1" opacity="0.3"/>
+  <!-- Waveform bars -->
+  <rect x="50"  y="100" width="6" height="20" rx="2" fill="#f59e0b" opacity="0.5"/>
+  <rect x="62"  y="88"  width="6" height="44" rx="2" fill="#f59e0b" opacity="0.7"/>
+  <rect x="74"  y="78"  width="6" height="64" rx="2" fill="#f59e0b" opacity="0.9"/>
+  <rect x="86"  y="92"  width="6" height="36" rx="2" fill="#f59e0b" opacity="0.7"/>
+  <rect x="98"  y="82"  width="6" height="56" rx="2" fill="#fbbf24" opacity="0.9"/>
+  <rect x="110" y="72"  width="6" height="76" rx="2" fill="#fbbf24" opacity="1"/>
+  <rect x="122" y="84"  width="6" height="52" rx="2" fill="#f59e0b" opacity="0.8"/>
+  <rect x="134" y="90"  width="6" height="40" rx="2" fill="#f59e0b" opacity="0.7"/>
+  <rect x="146" y="95"  width="6" height="30" rx="2" fill="#f59e0b" opacity="0.6"/>
+  <rect x="158" y="86"  width="6" height="48" rx="2" fill="#f59e0b" opacity="0.7"/>
+  <rect x="170" y="80"  width="6" height="60" rx="2" fill="#fbbf24" opacity="0.8"/>
+  <rect x="182" y="96"  width="6" height="28" rx="2" fill="#f59e0b" opacity="0.5"/>
+  <rect x="194" y="104" width="6" height="12" rx="2" fill="#f59e0b" opacity="0.4"/>
+  <text x="130" y="176" font-family="monospace" font-size="8" fill="#f59e0b" text-anchor="middle" opacity="0.6">meeting.mp3</text>
+
+  <!-- Arrow 1 -->
+  <line x1="242" y1="110" x2="272" y2="110" stroke="#f59e0b" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="272,105 282,110 272,115" fill="#f59e0b" opacity="0.5"/>
+
+  <!-- AssemblyAI -->
+  <rect x="287" y="88" width="90" height="44" rx="6" fill="#f59e0b" opacity="0.08" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="332" y="107" font-family="monospace" font-size="8.5" fill="#fbbf24" text-anchor="middle" font-weight="600">AssemblyAI</text>
+  <text x="332" y="120" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">speech-to-text</text>
+  <text x="332" y="131" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">transcript</text>
+
+  <!-- Arrow 2 -->
+  <line x1="389" y1="110" x2="415" y2="110" stroke="#a78bfa" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="415,105 425,110 415,115" fill="#a78bfa" opacity="0.5"/>
+
+  <!-- Groq LLM -->
+  <rect x="430" y="76" width="88" height="38" rx="6" fill="#8b5cf6" opacity="0.09" stroke="#8b5cf6" stroke-width="1.2"/>
+  <text x="474" y="94" font-family="monospace" font-size="8.5" fill="#a78bfa" text-anchor="middle" font-weight="600">Groq LLM</text>
+  <text x="474" y="107" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">action items</text>
+
+  <!-- Hume AI -->
+  <rect x="430" y="124" width="88" height="36" rx="6" fill="#ec4899" opacity="0.08" stroke="#ec4899" stroke-width="1"/>
+  <text x="474" y="141" font-family="monospace" font-size="8" fill="#f472b6" text-anchor="middle" font-weight="600">Hume AI</text>
+  <text x="474" y="154" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">sentiment</text>
+
+  <!-- Bracket joining -->
+  <line x1="519" y1="95"  x2="540" y2="95"  stroke="#10b981" stroke-width="1" opacity="0.4"/>
+  <line x1="519" y1="142" x2="540" y2="142" stroke="#10b981" stroke-width="1" opacity="0.4"/>
+  <line x1="540" y1="95"  x2="540" y2="142" stroke="#10b981" stroke-width="1" opacity="0.4"/>
+  <line x1="540" y1="118" x2="560" y2="118" stroke="#10b981" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="560,113 570,118 560,123" fill="#10b981" opacity="0.5"/>
+
+  <!-- Trello -->
+  <rect x="578" y="76" width="80" height="84" rx="6" fill="#10b981" opacity="0.08" stroke="#10b981" stroke-width="1.2"/>
+  <text x="618" y="93" font-family="monospace" font-size="8.5" fill="#34d399" text-anchor="middle" font-weight="600">Trello</text>
+  <line x1="588" y1="99" x2="648" y2="99" stroke="#10b981" stroke-width="0.5" opacity="0.2"/>
+  <!-- Trello cards -->
+  <rect x="590" y="104" width="56" height="14" rx="2" fill="#10b981" opacity="0.15"/>
+  <text x="618" y="114" font-family="monospace" font-size="6.5" fill="#34d399" text-anchor="middle" opacity="0.8">card created</text>
+  <rect x="590" y="122" width="56" height="14" rx="2" fill="#10b981" opacity="0.1"/>
+  <text x="618" y="132" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.5">assigned</text>
+  <rect x="590" y="140" width="56" height="14" rx="2" fill="#10b981" opacity="0.1"/>
+  <text x="618" y="150" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">due date set</text>
+
+  <!-- Hackathon badge -->
+  <rect x="680" y="72" width="100" height="36" rx="5" fill="#f59e0b" opacity="0.1" stroke="#f59e0b" stroke-width="0.8"/>
+  <text x="730" y="87" font-family="monospace" font-size="7.5" fill="#fbbf24" text-anchor="middle" opacity="0.9">🏆 2nd Place</text>
+  <text x="730" y="100" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.4">Luddy Hackathon</text>
+
+  <!-- Top label -->
+  <text x="32" y="24" font-family="sans-serif" font-size="10" fill="#f59e0b" opacity="0.7" font-weight="600" letter-spacing="2">AI SYSTEMS · MEETING INTELLIGENCE · GROQ</text>
+</svg>

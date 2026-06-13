@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+  <defs>
+    <pattern id="dotsCB" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="0.7" fill="white" opacity="0.05"/>
+    </pattern>
+    <linearGradient id="bgCB" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0a00"/>
+      <stop offset="100%" stop-color="#141000"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="220" fill="url(#bgCB)"/>
+  <rect width="800" height="220" fill="url(#dotsCB)"/>
+
+  <!-- Glows -->
+  <ellipse cx="200" cy="110" rx="160" ry="80" fill="#eab308" opacity="0.05"/>
+  <ellipse cx="580" cy="110" rx="160" ry="70" fill="#eab308" opacity="0.03"/>
+
+  <!-- Screen -->
+  <rect x="30" y="52" width="240" height="14" rx="3" fill="#ffffff" opacity="0.08"/>
+  <text x="150" y="62" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">S C R E E N</text>
+
+  <!-- Seat grid -->
+  <!-- Row labels + seats (5 rows, 8 seats each) -->
+  <!-- Row A -->
+  <text x="36" y="86" font-family="monospace" font-size="6.5" fill="#eab308" opacity="0.5">A</text>
+  <rect x="50"  y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="68"  y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="86"  y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.6"/>
+  <rect x="104" y="76" width="14" height="12" rx="2" fill="#f87171" opacity="0.7"/>
+  <rect x="122" y="76" width="14" height="12" rx="2" fill="#f87171" opacity="0.7"/>
+  <rect x="140" y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.5"/>
+  <rect x="158" y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.5"/>
+  <rect x="176" y="76" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <!-- Row B -->
+  <text x="36" y="100" font-family="monospace" font-size="6.5" fill="#eab308" opacity="0.5">B</text>
+  <rect x="50"  y="92" width="14" height="12" rx="2" fill="#eab308" opacity="0.8"/>
+  <rect x="68"  y="92" width="14" height="12" rx="2" fill="#eab308" opacity="0.8"/>
+  <rect x="86"  y="92" width="14" height="12" rx="2" fill="#10b981" opacity="0.5"/>
+  <rect x="104" y="92" width="14" height="12" rx="2" fill="#10b981" opacity="0.5"/>
+  <rect x="122" y="92" width="14" height="12" rx="2" fill="#f87171" opacity="0.7"/>
+  <rect x="140" y="92" width="14" height="12" rx="2" fill="#f87171" opacity="0.7"/>
+  <rect x="158" y="92" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <rect x="176" y="92" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <!-- Row C -->
+  <text x="36" y="116" font-family="monospace" font-size="6.5" fill="#eab308" opacity="0.4">C</text>
+  <rect x="50"  y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <rect x="68"  y="108" width="14" height="12" rx="2" fill="#f87171" opacity="0.6"/>
+  <rect x="86"  y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <rect x="104" y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <rect x="122" y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.4"/>
+  <rect x="140" y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="158" y="108" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="176" y="108" width="14" height="12" rx="2" fill="#f87171" opacity="0.5"/>
+  <!-- Row D -->
+  <text x="36" y="132" font-family="monospace" font-size="6.5" fill="#eab308" opacity="0.35">D</text>
+  <rect x="50"  y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="68"  y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="86"  y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.3"/>
+  <rect x="104" y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.25"/>
+  <rect x="122" y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.25"/>
+  <rect x="140" y="124" width="14" height="12" rx="2" fill="#f87171" opacity="0.4"/>
+  <rect x="158" y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.2"/>
+  <rect x="176" y="124" width="14" height="12" rx="2" fill="#10b981" opacity="0.2"/>
+
+  <!-- Legend -->
+  <rect x="46"  y="150" width="10" height="8" rx="1" fill="#10b981" opacity="0.6"/>
+  <text x="60"  y="158" font-family="monospace" font-size="6.5" fill="#ffffff" opacity="0.4">Available</text>
+  <rect x="110" y="150" width="10" height="8" rx="1" fill="#f87171" opacity="0.7"/>
+  <text x="124" y="158" font-family="monospace" font-size="6.5" fill="#ffffff" opacity="0.4">Taken</text>
+  <rect x="168" y="150" width="10" height="8" rx="1" fill="#eab308" opacity="0.8"/>
+  <text x="182" y="158" font-family="monospace" font-size="6.5" fill="#ffffff" opacity="0.4">Selected</text>
+
+  <!-- Ticket stub -->
+  <rect x="290" y="55" width="180" height="110" rx="8" fill="#eab308" opacity="0.08" stroke="#eab308" stroke-width="1.2"/>
+  <!-- Perforation -->
+  <line x1="290" y1="105" x2="470" y2="105" stroke="#eab308" stroke-width="0.8" stroke-dasharray="4,3" opacity="0.3"/>
+  <circle cx="290" cy="105" r="6" fill="#0d0a00"/>
+  <circle cx="470" cy="105" r="6" fill="#0d0a00"/>
+  <!-- Ticket content -->
+  <text x="380" y="77" font-family="monospace" font-size="10" fill="#eab308" text-anchor="middle" font-weight="600">CINEBOOK</text>
+  <text x="380" y="90" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.5">Interstellar · Cinema 1</text>
+  <text x="380" y="100" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">Fri Jun 14 · 8:30 PM</text>
+  <text x="340" y="123" font-family="monospace" font-size="8" fill="#eab308" text-anchor="middle">B1, B2</text>
+  <text x="340" y="135" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.35">Row B · Premium</text>
+  <!-- QR code placeholder -->
+  <rect x="416" y="112" width="36" height="36" rx="2" fill="#ffffff" opacity="0.08"/>
+  <rect x="419" y="115" width="10" height="10" rx="1" fill="#eab308" opacity="0.4"/>
+  <rect x="432" y="115" width="10" height="10" rx="1" fill="#eab308" opacity="0.3"/>
+  <rect x="419" y="128" width="10" height="10" rx="1" fill="#eab308" opacity="0.3"/>
+  <rect x="432" y="128" width="6" height="6"  rx="1" fill="#eab308" opacity="0.5"/>
+  <rect x="440" y="134" width="6" height="6"  rx="1" fill="#eab308" opacity="0.4"/>
+
+  <!-- Stack badges -->
+  <rect x="490" y="55" width="130" height="26" rx="5" fill="#8b5cf6" opacity="0.08" stroke="#8b5cf6" stroke-width="0.8"/>
+  <text x="555" y="68" font-family="monospace" font-size="7.5" fill="#a78bfa" text-anchor="middle">Spring Boot · Redux</text>
+  <text x="555" y="78" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">Swagger 50+ endpoints</text>
+
+  <rect x="490" y="92" width="130" height="26" rx="5" fill="#06b6d4" opacity="0.07" stroke="#06b6d4" stroke-width="0.8"/>
+  <text x="555" y="105" font-family="monospace" font-size="7.5" fill="#06b6d4" text-anchor="middle">Atomic seat lock</text>
+  <text x="555" y="115" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">pessimistic · no double-book</text>
+
+  <rect x="490" y="130" width="130" height="26" rx="5" fill="#10b981" opacity="0.07" stroke="#10b981" stroke-width="0.8"/>
+  <text x="555" y="143" font-family="monospace" font-size="7.5" fill="#34d399" text-anchor="middle">5 movies · 4 cinemas</text>
+  <text x="555" y="153" font-family="monospace" font-size="6.5" fill="#ffffff" text-anchor="middle" opacity="0.3">80 showtimes · 120 seats</text>
+
+  <!-- Stats box -->
+  <rect x="644" y="72" width="132" height="76" rx="6" fill="#eab308" opacity="0.05" stroke="#eab308" stroke-width="0.8" opacity="0.3"/>
+  <text x="710" y="90" font-family="monospace" font-size="8" fill="#eab308" text-anchor="middle">Material-UI</text>
+  <line x1="654" y1="96" x2="766" y2="96" stroke="#eab308" stroke-width="0.5" opacity="0.15"/>
+  <text x="710" y="108" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">qrcode library</text>
+  <text x="710" y="120" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.35">idempotent seeding</text>
+  <text x="710" y="132" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">MySQL · JPA</text>
+  <text x="710" y="144" font-family="monospace" font-size="6.5" fill="#eab308" text-anchor="middle" opacity="0.5">SEED_ON_START</text>
+
+  <!-- Top label -->
+  <text x="32" y="30" font-family="sans-serif" font-size="10" fill="#eab308" opacity="0.7" font-weight="600" letter-spacing="2">FULLSTACK · CINEMA BOOKING · SPRING BOOT + REACT</text>
+</svg>

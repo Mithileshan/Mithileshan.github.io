@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220">
+  <defs>
+    <pattern id="g" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0L0 0 0 40" fill="none" stroke="white" stroke-width="0.4" opacity="0.04"/>
+    </pattern>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071422"/>
+      <stop offset="100%" stop-color="#0a1f35"/>
+    </linearGradient>
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="220" fill="url(#bg)"/>
+  <rect width="800" height="220" fill="url(#g)"/>
+
+  <!-- Glow effects -->
+  <ellipse cx="200" cy="110" rx="120" ry="80" fill="#10b981" opacity="0.04"/>
+  <ellipse cx="600" cy="110" rx="120" ry="80" fill="#06b6d4" opacity="0.04"/>
+
+  <!-- Stage 1: Document -->
+  <rect x="60" y="60" width="90" height="110" rx="6" fill="none" stroke="#10b981" stroke-width="1.5" opacity="0.6"/>
+  <rect x="60" y="60" width="90" height="110" rx="6" fill="#10b981" opacity="0.06"/>
+  <!-- Doc lines -->
+  <line x1="76" y1="95" x2="134" y2="95" stroke="#10b981" stroke-width="1.2" opacity="0.5"/>
+  <line x1="76" y1="108" x2="134" y2="108" stroke="#10b981" stroke-width="1.2" opacity="0.5"/>
+  <line x1="76" y1="121" x2="120" y2="121" stroke="#10b981" stroke-width="1.2" opacity="0.5"/>
+  <line x1="76" y1="134" x2="110" y2="134" stroke="#10b981" stroke-width="1.2" opacity="0.3"/>
+  <!-- PAN label -->
+  <rect x="72" y="67" width="35" height="16" rx="2" fill="#10b981" opacity="0.2"/>
+  <text x="89" y="79" font-family="monospace" font-size="8" fill="#10b981" text-anchor="middle" opacity="0.9">PAN</text>
+  <!-- Scan lines -->
+  <line x1="56" y1="90" x2="154" y2="90" stroke="#06b6d4" stroke-width="0.8" opacity="0.4" stroke-dasharray="2,3"/>
+  <line x1="56" y1="115" x2="154" y2="115" stroke="#06b6d4" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,3"/>
+  <text x="105" y="188" font-family="monospace" font-size="9" fill="#ffffff" opacity="0.35" text-anchor="middle">DOCUMENT</text>
+
+  <!-- Arrow 1 -->
+  <line x1="165" y1="110" x2="225" y2="110" stroke="#06b6d4" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="225,105 235,110 225,115" fill="#06b6d4" opacity="0.5"/>
+
+  <!-- Stage 2: S3 Upload -->
+  <rect x="250" y="80" width="70" height="60" rx="6" fill="none" stroke="#06b6d4" stroke-width="1.5" opacity="0.5"/>
+  <rect x="250" y="80" width="70" height="60" rx="6" fill="#06b6d4" opacity="0.05"/>
+  <text x="285" y="106" font-family="monospace" font-size="9" fill="#06b6d4" text-anchor="middle" opacity="0.8">S3</text>
+  <text x="285" y="120" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">presigned</text>
+  <text x="285" y="131" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">upload</text>
+  <text x="285" y="155" font-family="monospace" font-size="8" fill="#ffffff" opacity="0.3" text-anchor="middle">AWS S3</text>
+
+  <!-- Arrow 2 -->
+  <line x1="332" y1="110" x2="375" y2="110" stroke="#8b5cf6" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="375,105 385,110 375,115" fill="#8b5cf6" opacity="0.5"/>
+
+  <!-- Stage 3: AI Pipeline (Celery) -->
+  <rect x="395" y="55" width="80" height="44" rx="6" fill="none" stroke="#8b5cf6" stroke-width="1" opacity="0.5"/>
+  <rect x="395" y="55" width="80" height="44" rx="6" fill="#8b5cf6" opacity="0.05"/>
+  <text x="435" y="73" font-family="monospace" font-size="8" fill="#a78bfa" text-anchor="middle">Claude</text>
+  <text x="435" y="86" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">extraction</text>
+  <text x="435" y="97" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">tamper risk</text>
+
+  <rect x="395" y="110" width="80" height="44" rx="6" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.5"/>
+  <rect x="395" y="110" width="80" height="44" rx="6" fill="#f59e0b" opacity="0.05"/>
+  <text x="435" y="128" font-family="monospace" font-size="8" fill="#fbbf24" text-anchor="middle">Rekognition</text>
+  <text x="435" y="141" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">face match</text>
+  <text x="435" y="152" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">sim ≥ 80.0</text>
+
+  <!-- Arrow 3 -->
+  <line x1="487" y1="110" x2="535" y2="110" stroke="#10b981" stroke-width="1.5" opacity="0.5"/>
+  <polygon points="535,105 545,110 535,115" fill="#10b981" opacity="0.5"/>
+
+  <!-- Stage 4: Verified badge -->
+  <!-- Shield shape -->
+  <path d="M575 65 L575 65 C575 65 620 65 620 65 L620 65 L635 65 L635 130 C635 150 605 165 605 165 C605 165 575 150 575 130 Z" fill="url(#shieldGrad)" opacity="0.15" stroke="#10b981" stroke-width="1.5"/>
+  <!-- Checkmark -->
+  <polyline points="587,112 600,125 626,97" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="605" y="185" font-family="monospace" font-size="9" fill="#10b981" text-anchor="middle" opacity="0.8">VERIFIED</text>
+
+  <!-- Arrow 4 (webhook) -->
+  <line x1="648" y1="110" x2="695" y2="110" stroke="#06b6d4" stroke-width="1.5" opacity="0.5" stroke-dasharray="4,3"/>
+  <polygon points="695,105 705,110 695,115" fill="#06b6d4" opacity="0.5"/>
+
+  <!-- Webhook -->
+  <rect x="710" y="88" width="68" height="44" rx="5" fill="none" stroke="#06b6d4" stroke-width="1" opacity="0.5"/>
+  <rect x="710" y="88" width="68" height="44" rx="5" fill="#06b6d4" opacity="0.05"/>
+  <text x="744" y="105" font-family="monospace" font-size="7.5" fill="#06b6d4" text-anchor="middle">webhook</text>
+  <text x="744" y="118" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.4">HMAC-SHA256</text>
+  <text x="744" y="128" font-family="monospace" font-size="7" fill="#ffffff" text-anchor="middle" opacity="0.3">signed</text>
+
+  <!-- Top label -->
+  <text x="32" y="30" font-family="sans-serif" font-size="10" fill="#10b981" opacity="0.7" font-weight="600" letter-spacing="2">B2B KYC · IDENTITY VERIFICATION</text>
+  <!-- Celery badge -->
+  <rect x="395" y="170" width="80" height="16" rx="3" fill="#8b5cf6" opacity="0.15"/>
+  <text x="435" y="181" font-family="monospace" font-size="7.5" fill="#a78bfa" text-anchor="middle" opacity="0.8">Celery · parallel</text>
+</svg>

@@ -32,6 +32,11 @@ export default function ProjectCard({ project }: { project: Project }) {
             <span className="text-xs font-semibold text-accent/70 uppercase tracking-wide">
               {project.category}
             </span>
+            {project.status && (
+              <span className="text-xs font-medium text-cyan-400/90 bg-cyan-400/10 border border-cyan-400/20 px-2 py-0.5 rounded-full">
+                {project.status}
+              </span>
+            )}
             {project.award && (
               <span className="text-xs font-medium text-amber-400/90 bg-amber-400/10 border border-amber-400/20 px-2 py-0.5 rounded-full">
                 🏆 {project.award}

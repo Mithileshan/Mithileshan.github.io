@@ -20,6 +20,7 @@ export interface Project {
   tagline: string
   category: string
   featured: boolean
+  status?: string
   award?: string
   role?: string
   tech: string[]

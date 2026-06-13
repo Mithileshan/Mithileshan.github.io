@@ -31,14 +31,12 @@ const nameSlide = {
 }
 
 const skillGroups = [
-  { label: 'Languages', skills: ['Java', 'Python', 'JavaScript', 'SQL', 'C'] },
-  { label: 'Backend', skills: ['Spring Boot', 'Node.js', 'Express.js', 'Flask', 'REST APIs', 'WebSockets'] },
-  { label: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL'] },
-  { label: 'Cloud & DevOps', skills: ['AWS', 'Docker', 'Kubernetes', 'GitHub Actions', 'CI/CD'] },
-  { label: 'Frontend', skills: ['React.js', 'Redux', 'Angular', 'Tailwind CSS'] },
-  { label: 'ML / CV', skills: ['YOLOv5', 'YOLOv8', 'SVM', 'scikit-learn', 'OpenCV'] },
-  { label: 'Testing & Tools', skills: ['JUnit', 'Mockito', 'Git', 'Postman', 'Log4j'] },
-  { label: 'Architecture', skills: ['Microservices', 'Event-Driven', 'RBAC', 'OAuth 2.0'] },
+  { label: 'Languages & Frameworks', skills: ['Python', 'Java', 'JavaScript', 'Spring Boot', 'Flask', 'FastAPI', 'Node.js', 'React.js', 'Next.js'] },
+  { label: 'AI & Data', skills: ['LLM Integration', 'RAG', 'LangChain', 'LangGraph', 'OpenAI API', 'Claude API', 'FAISS', 'pgvector', 'scikit-learn'] },
+  { label: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Supabase'] },
+  { label: 'Cloud', skills: ['AWS', 'EC2', 'S3', 'RDS', 'ECS', 'ElastiCache', 'Rekognition', 'CloudWatch'] },
+  { label: 'DevOps & CI/CD', skills: ['Docker', 'Kubernetes', 'GitHub Actions', 'CI/CD'] },
+  { label: 'Practices & Tools', skills: ['Microservices', 'Async Pipelines', 'Celery', 'WebSockets', 'SSE', 'JWT', 'OAuth 2.0', 'JUnit', 'Postman'] },
 ]
 
 const experience = [
@@ -50,7 +48,7 @@ const experience = [
     summary: 'Led backend development for two production microservices within a 6-member Agile team, taking ownership of authentication, data optimization, and deployment infrastructure. This role pushed me to think beyond writing code — toward owning reliability, security, and the team\'s engineering standards.',
     bullets: [
       'Architected two Spring Boot microservices with Docker + Kubernetes, cutting deployment time by 30% and enabling independent scaling.',
-      'Implemented OAuth 2.0 + JWT authentication with RBAC, reducing unauthorized access attempts by 40%.',
+      'Implemented OAuth 2.0 + JWT authentication with RBAC across all distributed services.',
       'Optimized PostgreSQL queries through indexing and restructuring, improving high-traffic endpoint response times by 30%.',
       'Engineered Python Flask APIs for I/O-intensive operations, increasing system throughput by 25%.',
       'Established testing practices with JUnit, Mockito, and Log4j — bringing team coverage to 95% across all distributed services.',
@@ -78,7 +76,7 @@ const experience = [
     summary: 'Joined to build internal tools and ended up redesigning two core workflows. Eliminating 75% of manual data effort and compressing a 2-hour deploy process to 15 minutes taught me how automation compounds — small improvements in infrastructure create outsized gains for every future release.',
     bullets: [
       'Built Python data pipelines processing 50K+ records daily, reducing manual effort by 75% and improving accuracy by 25%.',
-      'Developed React dashboards integrated with Node.js APIs for real-time KPI visibility, accelerating decisions by 40%.',
+      'Developed React dashboards integrated with Node.js APIs for real-time KPI visibility across client datasets.',
       'Implemented CI/CD pipelines with GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes.',
       'Built data validation and transformation logic to ensure quality and consistency across multiple client datasets.',
     ],
@@ -165,15 +163,16 @@ export default function Home() {
             </motion.div>
 
             <motion.p variants={fadeUp} className="text-xl text-white/50 font-medium tracking-wide">
-              Software Engineer · Full-Stack · ML · Data Systems
+              Backend & AI Systems Engineer
             </motion.p>
 
             <motion.p
               variants={fadeUp}
               className="text-base text-white/40 max-w-2xl leading-relaxed"
             >
-              I build full-stack systems, ML applications, and data pipelines — with a focus on
-              performance, reliability, and measurable impact.
+              I build production-grade backend systems and AI pipelines — async workers, multi-agent
+              reasoning systems, and cloud-native APIs designed for real workloads. Currently
+              finishing my M.S. in CS at Indiana University.
             </motion.p>
 
             <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mt-2 justify-center">
@@ -305,7 +304,7 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-2 sm:grid-cols-3 gap-8"
           >
             {skillGroups.map(({ label, skills }) => (
               <motion.div key={label} variants={fadeUp}>
@@ -377,7 +376,7 @@ export default function Home() {
           >
             <h2 className="text-3xl font-bold text-white mb-3">Get in Touch</h2>
             <p className="text-white/40 mb-10 max-w-md mx-auto">
-              Open to full-time roles, internships, and interesting projects. Let's connect.
+              Open to full-time backend engineering roles — available immediately. Let's connect.
             </p>
             <div className="flex items-center justify-center gap-4 flex-wrap">
               <a

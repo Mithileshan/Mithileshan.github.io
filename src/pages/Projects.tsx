@@ -16,6 +16,11 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 }
 
+// VeriDoc + Multi-Agent only in the Featured section
+const featuredProjects = projects.slice(0, 2)
+// Everything else: StockPulse, Mana.ai, Brain Tumor, DevTracker, Tinker + all repos
+const allOtherProjects = [...projects.slice(2), ...repos]
+
 export default function Projects() {
   return (
     <main className="pt-16 min-h-screen">
@@ -29,10 +34,10 @@ export default function Projects() {
           className="mb-16"
         >
           <h1 className="text-4xl font-bold text-white mb-2">Projects</h1>
-          <p className="text-white/40">Full-stack, ML, AI, and data engineering work.</p>
+          <p className="text-white/40">Backend systems, AI pipelines, and data engineering work.</p>
         </motion.div>
 
-        {/* Featured — with full case studies */}
+        {/* Featured — VeriDoc + Multi-Agent */}
         <div className="mb-20">
           <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest mb-6">
             Featured
@@ -43,7 +48,7 @@ export default function Projects() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {projects.map(project => (
+            {featuredProjects.map(project => (
               <motion.div key={project.slug} variants={fadeUp} className="h-full">
                 <ProjectCard project={project} />
               </motion.div>
@@ -51,7 +56,7 @@ export default function Projects() {
           </motion.div>
         </div>
 
-        {/* All other repos */}
+        {/* All other projects + repos */}
         <div>
           <div className="flex items-center gap-3 mb-6">
             <p className="text-xs font-semibold text-accent/70 uppercase tracking-widest">
@@ -73,7 +78,7 @@ export default function Projects() {
             animate="visible"
             className="grid grid-cols-1 md:grid-cols-2 gap-6"
           >
-            {repos.map(repo => (
+            {allOtherProjects.map(repo => (
               <motion.div key={repo.slug} variants={fadeUp} className="h-full">
                 <ProjectCard project={repo} />
               </motion.div>

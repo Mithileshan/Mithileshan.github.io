@@ -31,12 +31,12 @@ const nameSlide = {
 }
 
 const skillGroups = [
-  { label: 'Languages & Frameworks', skills: ['Python', 'Java', 'JavaScript', 'Spring Boot', 'Flask', 'FastAPI', 'Node.js', 'React.js', 'Next.js'] },
+  { label: 'Languages & Frameworks', skills: ['Python', 'Java', 'JavaScript', 'Spring Boot', 'Flask', 'FastAPI', 'Node.js', 'Express.js', 'React.js', 'Next.js'] },
   { label: 'AI & Data', skills: ['LLM Integration', 'RAG', 'LangChain', 'LangGraph', 'OpenAI API', 'Claude API', 'FAISS', 'pgvector', 'scikit-learn'] },
   { label: 'Databases', skills: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Supabase'] },
   { label: 'Cloud', skills: ['AWS', 'EC2', 'S3', 'RDS', 'ECS', 'ElastiCache', 'Rekognition', 'CloudWatch'] },
   { label: 'DevOps & CI/CD', skills: ['Docker', 'Kubernetes', 'GitHub Actions', 'CI/CD'] },
-  { label: 'Practices & Tools', skills: ['Microservices', 'Async Pipelines', 'Celery', 'WebSockets', 'SSE', 'JWT', 'OAuth 2.0', 'JUnit', 'Postman'] },
+  { label: 'Practices & Tools', skills: ['Microservices', 'Async Pipelines', 'Celery', 'WebSockets', 'SSE', 'JWT', 'OAuth 2.0', 'JUnit', 'Postman', 'Agile'] },
 ]
 
 const experience = [
@@ -47,11 +47,11 @@ const experience = [
     period: 'Jan 2024 – Aug 2024',
     summary: 'Led backend development for two production microservices within a 6-member Agile team, taking ownership of authentication, data optimization, and deployment infrastructure. This role pushed me to think beyond writing code — toward owning reliability, security, and the team\'s engineering standards.',
     bullets: [
-      'Architected two Spring Boot microservices with Docker + Kubernetes, cutting deployment time by 30% and enabling independent scaling.',
-      'Implemented OAuth 2.0 + JWT authentication with RBAC across all distributed services.',
-      'Optimized PostgreSQL queries through indexing and restructuring, improving high-traffic endpoint response times by 30%.',
-      'Engineered Python Flask APIs for I/O-intensive operations, increasing system throughput by 25%.',
-      'Established testing practices with JUnit, Mockito, and Log4j — bringing team coverage to 95% across all distributed services.',
+      'Reduced deployment time by 30% by re-architecting two monolithic services into independently deployable Spring Boot microservices containerized with Docker and orchestrated on Kubernetes.',
+      'Increased system throughput by 25% by introducing a Python Flask processing layer on AWS EC2 to offload I/O-heavy operations and expose an inference-ready interface for LLM integration.',
+      'Cut endpoint response times by 30% under production load through PostgreSQL query restructuring and targeted indexing on AWS RDS.',
+      'Achieved 95% test coverage across distributed services by establishing a JUnit, Mockito, and Log4j observability baseline, enabling faster incident diagnosis within a 6-member Agile team.',
+      'Secured all service endpoints on AWS by implementing OAuth 2.0 and JWT with role-based access control, hardening authentication across the distributed system.',
     ],
   },
   {
@@ -61,11 +61,10 @@ const experience = [
     period: 'Jun 2023 – Jan 2024',
     summary: 'Joined as an intern and quickly became the go-to person for diagnosing hard-to-reproduce production issues. Resolving 30+ incidents through structured logging gave me a foundation for writing software that is observable and maintainable by design.',
     bullets: [
-      'Built REST APIs using Spring Boot (MVC) with structured validation and error handling.',
-      'Designed normalized PostgreSQL schemas and indexing strategies to sustain performance at scale.',
-      'Diagnosed and resolved 30+ production issues using structured logging and systematic debugging.',
-      'Grew test coverage from 60% to 90% through comprehensive JUnit test suites.',
-      'Refactored legacy modules following clean code principles to reduce technical debt and improve team velocity.',
+      'Grew test coverage from 60% to 90% and resolved 30+ production issues by introducing structured JUnit/Mockito test suites and log-based root cause analysis across the service layer.',
+      'Kept query performance stable as data volumes scaled by designing normalized PostgreSQL schemas with indexing strategies from scratch, eliminating recurring slow-query incidents.',
+      'Reduced long-term maintenance cost by refactoring legacy modules to established design patterns, cutting the surface area for regression bugs across core services.',
+      'Designed clean REST API contracts with structured input/output schemas, establishing integration-ready service boundaries later extended to support LLM-powered feature additions.',
     ],
   },
   {
@@ -75,20 +74,20 @@ const experience = [
     period: 'Mar 2023 – May 2023',
     summary: 'Joined to build internal tools and ended up redesigning two core workflows. Eliminating 75% of manual data effort and compressing a 2-hour deploy process to 15 minutes taught me how automation compounds — small improvements in infrastructure create outsized gains for every future release.',
     bullets: [
-      'Built Python data pipelines processing 50K+ records daily, reducing manual effort by 75% and improving accuracy by 25%.',
-      'Developed React dashboards integrated with Node.js APIs for real-time KPI visibility across client datasets.',
-      'Implemented CI/CD pipelines with GitHub Actions and Docker, cutting deployment time from 2 hours to 15 minutes.',
-      'Built data validation and transformation logic to ensure quality and consistency across multiple client datasets.',
+      'Eliminated 75% of manual data effort by building Python pipelines that processed 50,000+ records daily from raw CSV ingestion through validation to database write, running on AWS EC2 with S3 for fault-tolerant intermediate storage.',
+      'Reduced deployment time from 2 hours to 15 minutes by implementing GitHub Actions and Docker CI/CD with automated rollout to AWS EC2, standardizing releases across all environments.',
+      'Delivered real-time KPI dashboards by connecting React frontends to Node.js APIs and AWS CloudWatch metrics, giving client stakeholders live operational visibility.',
+      'Built the pipeline data model with normalized schemas and clean transformation contracts, making the ingestion layer extensible for AI-driven analytics without structural changes.',
     ],
   },
 ]
 
 const publications = [
   {
-    title: 'Detection of Brain Tumor Using YOLOv5 Algorithm',
+    title: 'Detection of Brain Tumor Using YOLOv8 Algorithm',
     journal: 'IEEE',
     date: 'Mar 2024',
-    link: 'https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Detection+of+Brain+Tumor+Using+YOLOv5+Algorithm',
+    link: 'https://ieeexplore.ieee.org/search/searchresult.jsp?queryText=Detection+of+Brain+Tumor+Using+YOLOv8+Algorithm',
   },
   {
     title: 'Brain Tumor Detector Using SVM Algorithm',

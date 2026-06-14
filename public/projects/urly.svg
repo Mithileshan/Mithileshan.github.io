@@ -18,7 +18,7 @@
   <!-- Long URL input -->
   <rect x="30" y="80" width="270" height="36" rx="18" fill="#6366f1" opacity="0.08" stroke="#6366f1" stroke-width="1.2"/>
   <text x="48" y="94" font-family="monospace" font-size="7" fill="#818cf8" opacity="0.9">https://www.example.com/very/long/path</text>
-  <text x="48" y="107" font-family="monospace" font-size="7" fill="#818cf8" opacity="0.6">?utm_source=email&utm_campaign=spring</text>
+  <text x="48" y="107" font-family="monospace" font-size="7" fill="#818cf8" opacity="0.6">?utm_source=email&amp;utm_campaign=spring</text>
 
   <!-- Arrow -->
   <line x1="314" y1="98" x2="356" y2="98" stroke="#6366f1" stroke-width="1.5" stroke-opacity="0.5"/>
